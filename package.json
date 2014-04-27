@@ -1,0 +1,14 @@
+{
+    "name" : "www.synthventure.com",
+    "version" : "1.0.0",
+    "author" : "Rena",
+    "private" : true,
+    "devDependencies" : {
+        "grunt": "*",
+        "grunt-contrib-cssmin": "*",
+        "grunt-contrib-concat":	"*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "*",
+        "matchdep": "*"
+    }
+}
