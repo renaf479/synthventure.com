@@ -7,14 +7,14 @@ module.exports = function(grunt){
         cssmin: {
         	build: {
         		files: {
-        			'css/main.min.css': ['css/build/**/*.css']
+        			'css/main.min.css': ['build/css/**/*.css']
         		}
         	}
         },
         uglify: {
 		    build: {
 		        files: {
-		            'js/main.min.js': ['js/build/**/*.js'],             
+		            'js/main.min.js': ['build/js/**/*.js'],             
 		        }
 		    },
 		    options: {
@@ -23,7 +23,7 @@ module.exports = function(grunt){
 		},
 		watch: {
 			scripts: {
-				files: ['js/build/**/*.js', 'css/build/**/*.css'],
+				files: ['build/js/**/*.js', 'build/css/**/*.css'],
 				tasks: ['uglify', 'cssmin'],
 				options: {
 				  spawn: false
