@@ -12,9 +12,20 @@
         <link rel="stylesheet" href="css/main.min.css">
     </head>
     <body>
+    	<?php
+    		preg_match("`(?<=\.)\w+$`", $_SERVER['SERVER_NAME'], $tld);
+    		switch($tld[0]) {
+    			case 'technology':
+    				$company	= 'technology';
+    				break;
+	    		default:
+	    			$company	= '________';
+	    			break;
+    		}
+    	?>
     	<div id="content">
     		<div id="synth_venture">
-    			<div id="synth" class="inline">synth//</div>________
+    			<div id="synth" class="inline">synth//</div><?php echo $company;?>
     		</div>
     	</div>
     	<footer id="copyright">
