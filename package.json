@@ -1,14 +1,21 @@
 {
     "name" : "www.synthventure.com",
-    "version" : "1.0.0",
+    "version" : "2.0.0",
     "author" : "Rena",
-    "private" : true,
-    "devDependencies" : {
-        "grunt": "*",
-        "grunt-contrib-cssmin": "*",
-        "grunt-contrib-concat":	"*",
-        "grunt-contrib-uglify": "*",
-        "grunt-contrib-watch": "*",
-        "matchdep": "*"
-    }
+	"dependencies": {
+	"grunt": "0.x.x",
+		"grunt-autoprefixer": "0.2.x",
+		"grunt-contrib-clean": "0.5.x",
+		"grunt-contrib-copy": "0.4.x",
+		"grunt-contrib-cssmin": "0.6.x",
+		"grunt-contrib-uglify": "0.2.x",
+		"grunt-contrib-watch": "0.5.x",
+		"grunt-angular-templates": "*",
+		"grunt-contrib-sass": "*",
+		"load-grunt-tasks": "*"
+	},
+	"engine": "node >= 0.10",
+	"devDependencies": {
+		"grunt-contrib-sass": "^0.7.3"
+	}
 }
