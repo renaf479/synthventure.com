@@ -2,6 +2,38 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 	
 	grunt.initConfig({
+		/** Adds CSS vendor prefixes **/
+		autoprefixer: {
+			build: {
+				files: {'build/css/main.css': ['build/css/sass.css']}
+			}
+		},
+	    /** Wipes BUILD folder when finished **/
+	    clean: {
+	    	build: {
+		    	src: ['build']	
+	    	},
+			css: {
+				src: ['build/css', 'build/scss']
+			},
+			js: {
+				src: ['build/js']
+			},
+			templates: {
+				src: ['build/templates']
+			}
+		},
+		/** Combines JS files **/
+		concat: {
+			build: {
+				options: {
+					separator: ';'
+				},
+				files: {
+					'build/js/main.js': ['build/js/**/*.js']
+				}
+			}
+		},
 		/** Copies SRC to BUILD folder **/
 		copy: {
 			build: {
@@ -22,31 +54,13 @@ module.exports = function(grunt) {
 				dest: 'build/scss',
 				expand: true
 			},
-			cssDeploy: {
-				files: {'public_html/wp-content/themes/synth/css/main.css': ['build/css/main.min.css']}
+			cssDev: {
+				files: {'public_html/wp-content/themes/synth/css/main.css': ['build/css/main.css']}
 			},
-			jsDeploy: {
-				files: {'public_html/wp-content/themes/synth/js/main.js': ['build/js/main.min.js']}
+			jsDev: {
+				files: {'public_html/wp-content/themes/synth/js/main.js': ['build/js/main.js']}
 			}
 	    },
-	    /** Wipes BUILD folder when finished **/
-	    clean: {
-			css: {
-				src: ['build/css', 'build/scss']
-			},
-			js: {
-				src: ['build/js']
-			},
-			templates: {
-				src: ['build/templates']
-			}
-		},
-		/** Adds CSS vendor prefixes **/
-		autoprefixer: {
-			build: {
-				files: {'build/css/autoprefixer.css': ['build/css/sass.css']}
-			}
-		},
 		/** Minifies CSS **/
 		cssmin: {
 			sass: {
@@ -56,24 +70,13 @@ module.exports = function(grunt) {
 			},
 			deploy: {
 				files: {
-					'build/css/main.min.css': ['build/css/autoprefixer.css']
-				}
-			}
-		},
-		/** Minifies JS **/
-		uglify: {
-			build: {
-				options: {
-					mangle: false
-				},
-				files: {
-					'build/js/main.min.js': ['build/js/**/*.js']
+					'build/css/main.min.css': ['build/css/main.css']
 				}
 			}
 		},
 		/** Combines and minifes Angular templates */
 	    ngtemplates: {
-			codexApp: {
+			synthApp: {
 				cwd:		'src/templates',
 				src:        '**/*.html',
 				dest:       'src/js/app/templates.js',
@@ -95,17 +98,28 @@ module.exports = function(grunt) {
 		sass: {
 			build: {
 				files: {
-					'build/css/sass.css': ['build/scss/cssmin.scss']
+					'build/css/sass.css': ['build/scss/**/*.scss']
+				}
+			}
+		},
+		/** Minifies JS **/
+		uglify: {
+			build: {
+				options: {
+					mangle: false
+				},
+				files: {
+					'build/js/main.min.js': ['build/js/main.js']
 				}
 			}
 		},
 		watch: {
 			stylesheets: {
-				files: 'src/**/*.scss',
+				files: 'src/scss/**/*.scss',
 				tasks: ['stylesheets']
 			},
 			scripts: {
-				files: 'src/**/*.js',
+				files: 'src/js/**/*.js',
 				tasks: ['scripts']
 			},
 			templates: {
@@ -128,13 +142,13 @@ module.exports = function(grunt) {
     grunt.registerTask(
 		'stylesheets', 
 		'Compiles the stylesheets.', 
-		['clean:css', 'copy:cssBuild', 'cssmin:sass', 'sass', 'autoprefixer', 'cssmin:deploy', 'copy:cssDeploy']
+		['clean:css', 'copy:cssBuild', 'sass', 'autoprefixer', 'copy:cssDev', 'clean:css']
 	);
 	
 	grunt.registerTask(
 		'scripts', 
 		'Compiles the JavaScript files.', 
-		['clean:js', 'copy:jsBuild', 'uglify', 'copy:jsDeploy']
+		['clean:js', 'copy:jsBuild', 'concat', 'copy:jsDev', 'clean:js']
 	);
 
 	grunt.registerTask(
@@ -146,6 +160,12 @@ module.exports = function(grunt) {
     grunt.registerTask(
 		'build', 
 		'Compiles all of the assets and copies the files to the build directory.', 
-		['ngtemplates', 'stylesheets', 'scripts']
+		['clean', 'ngtemplates', 'stylesheets', 'scripts']
+	);
+	
+	grunt.registerTask(
+		'deploy',
+		'Minifies files for live deploy',
+		[]
 	);
 }
