@@ -32,6 +32,11 @@ module.exports = function(grunt) {
 				files: {
 					'build/js/main.js': ['build/js/**/*.js']
 				}
+			},
+			sass: {
+				files: {
+					'build/scss/concat.scss': ['build/scss/**/*.scss']
+				}
 			}
 		},
 		/** Copies SRC to BUILD folder **/
@@ -98,7 +103,7 @@ module.exports = function(grunt) {
 		sass: {
 			build: {
 				files: {
-					'build/css/sass.css': ['build/scss/**/*.scss']
+					'build/css/sass.css': ['build/scss/concat.scss']
 				}
 			}
 		},
@@ -142,7 +147,7 @@ module.exports = function(grunt) {
     grunt.registerTask(
 		'stylesheets', 
 		'Compiles the stylesheets.', 
-		['clean:css', 'copy:cssBuild', 'sass', 'autoprefixer', 'copy:cssDev', 'clean:css']
+		['clean:css', 'copy:cssBuild', 'concat:sass', 'sass', 'autoprefixer', 'copy:cssDev']
 	);
 	
 	grunt.registerTask(

@@ -1,0 +1,10 @@
+$zIndex: (
+	modal: 1000,
+	nav: 900,
+	bottom: 0
+);
+
+@mixin height($height) {
+	height: $height;
+	line-height: $height;
+}

@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: 'Roboto', 'Verdana', sans-serif;
+	margin: 0;	
+}
+
+.container {
+	width: $containerWidth;
+	margin: 0 auto;
+}
