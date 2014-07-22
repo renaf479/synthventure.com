@@ -15,7 +15,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-    	<nav id="nav">
+    	<nav id="nav" data-ui-scrollfix="+10">
 			<?php wp_nav_menu(	
 				array(
 					'container'=>false,

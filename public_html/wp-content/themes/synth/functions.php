@@ -37,10 +37,32 @@
   
   */
 	}
-
+	
+	function synth_editor_buttons($buttons) {
+		array_unshift($buttons, 'styleselect');
+		return $buttons;
+	}
+	
+	function synth_mce_before_init($settings) {
+		$directives = array(
+			array(
+				'title'=>'Article Overlay',
+				'classes'=>'article-overlay',
+				'block'=>'blockquote',
+				'wrapper'=>true
+			)
+		);
+		
+		$settings['style_formats'] = json_encode($directives);
+		return $settings;
+	}
+	
 
 
 add_action('wp_enqueue_scripts', 'synth_scripts');
 
 add_filter('show_admin_bar', '__return_false');
+add_filter('mce_buttons_2', 'synth_editor_buttons');
+add_filter('tiny_mce_before_init', 'synth_mce_before_init');
+
 ?>

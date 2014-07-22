@@ -1,5 +1,5 @@
 <?php 
-	/* Template Name: Homepage */ 
+	/* Template Name: Our Work */ 
 	global $post;
 	$catSlug = 'works';
 	
@@ -11,12 +11,6 @@
 ?> 
 
 <?php get_header(); ?>
-
-	<!-- COVER IMAGE (Static) -->
-	<div id="cover">
-		<img class="logo" src=""/>
-		<div class="tagline"><?php echo get_bloginfo('description', 'display');?></div>
-	</div>
 
 	<div class="container">
 		<!-- ABOUT US (Static) -->

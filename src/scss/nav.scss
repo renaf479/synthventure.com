@@ -1,10 +1,24 @@
 #nav {
+	@extend .transition;
+	
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: map-get($zIndex, nav);
+	color: $textColorInverse;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-family: 'Telavision';
+	letter-spacing: 2px;
 	
+
 	@include height($navHeight);
+	
+	&.ui-scrollfix {
+		background-color: $colorPrimary;
+		
+		@include height($navHeight + $gridUnit*2);
+	}
 	
 	.menu {
 		width: $navWidth;
@@ -15,8 +29,20 @@
 		list-style: none;
 		
 		li {
-			display: inline-block;
-			vertical-align: top;
+			float: left;
+			margin: 0 $gridUnit*2;
+			
+			a {
+				@extend .transition;
+				
+				border-width: 0 0 1px 0;
+				border-style: solid;
+				border-color: rgba($textColorInverse, 0);
+				
+				&:hover {
+					border-color: rgba($textColorInverse, 1);
+				}
+			}
 		}
 	}
 }
