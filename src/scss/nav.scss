@@ -20,8 +20,13 @@
 		@include height($navHeight + $gridUnit*2);
 	}
 	
-	.menu {
+	.container {
 		width: $navWidth;
+	}
+	
+	.menu {
+		float: left;
+		width: $navWidth/2;
 		height: inherit;
 		color: $textColorInverse;
 		margin: 0 auto;
@@ -44,6 +49,43 @@
 				&:hover {
 					border-color: rgba($textColorInverse, 1);
 				}
+			}
+		}
+	}
+	
+	#menu-social {
+		li {
+			float: right;
+			width: $gridUnit * 5;
+			height: $gridUnit * 5;
+			display: block;
+			text-align: center;
+			
+			
+			&.facebook {
+				a {
+					@extend .icon-facebook;
+				}
+			}
+				
+			&.twitter {
+				a {
+					@extend .icon-twitter;
+				}
+			}
+			
+			&.instagram {
+				a {
+					@extend .icon-instagram;
+				}
+			} 
+			
+			a {
+				@extend .icon;
+				display: block;
+				width: inherit;
+				height: inherit;
+				border: 0 none;
 			}
 		}
 	}

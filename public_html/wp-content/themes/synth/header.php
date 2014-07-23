@@ -16,10 +16,19 @@
     </head>
     <body <?php body_class(); ?>>
     	<nav id="nav" data-ui-scrollfix="+10">
-			<?php wp_nav_menu(	
-				array(
+    		<div class="container">
+			<?php 
+				wp_nav_menu(array(
 					'container'=>false,
-					'theme_location' => 'top')
+					'theme_location' => 'top'
+					)
+				);
+				
+				wp_nav_menu(array(
+					'container'=>false,
+					'theme_location' => 'top-right'
+					)
 				);
 			?>
+    		</div>
 		</nav>

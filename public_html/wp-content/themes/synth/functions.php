@@ -5,6 +5,7 @@
 		
 		//Registers Nav
 		register_nav_menu('top', 'Nav');
+		register_nav_menu('top-right', 'Social');
 	}
 	
 	add_action('after_setup_theme', 'synth_setup');
@@ -15,8 +16,8 @@
 	add_action('widgets_init', 'synth_widgets');
 	
 	function synth_scripts() {
-		wp_enqueue_style('main', get_template_directory_uri().'/css/main.css');
-		wp_enqueue_script('main', get_template_directory_uri().'/js/main.js');
+		wp_enqueue_style('main', '/css/main.css');
+		wp_enqueue_script('main', '/js/main.js');
 		
 		/*
   // register AngularJS
@@ -58,11 +59,22 @@
 	}
 	
 
-
-add_action('wp_enqueue_scripts', 'synth_scripts');
-
-add_filter('show_admin_bar', '__return_false');
-add_filter('mce_buttons_2', 'synth_editor_buttons');
-add_filter('tiny_mce_before_init', 'synth_mce_before_init');
+	// remove junk from head
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'feed_links', 2);
+	remove_action('wp_head', 'index_rel_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'feed_links_extra', 3);
+	remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+	
+	
+	add_action('wp_enqueue_scripts', 'synth_scripts');
+	
+	add_filter('show_admin_bar', '__return_false');
+	add_filter('mce_buttons_2', 'synth_editor_buttons');
+	add_filter('tiny_mce_before_init', 'synth_mce_before_init');
 
 ?>
