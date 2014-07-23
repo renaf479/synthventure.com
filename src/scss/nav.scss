@@ -30,7 +30,9 @@
 		
 		li {
 			float: left;
-			margin: 0 $gridUnit*2;
+			padding: 0 $gridUnit*2;
+			position: relative;
+			overflow: hidden;
 			
 			a {
 				@extend .transition;

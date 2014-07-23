@@ -36,7 +36,6 @@
 			<?php if($works) foreach($works as $post): setup_postdata($post);?>
 			<div class="work">
 				<h3 class="title"><?php the_title();?></h3>
-				<div class="content"><?php the_excerpt();?></div>
 				<?php the_post_thumbnail('large', array('class'=>'thumbnail'));?>
 			</div>
 			<?php endforeach;?>

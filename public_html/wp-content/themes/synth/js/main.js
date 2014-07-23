@@ -24099,9 +24099,11 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix']);;synthA
 				bgSrc: '@'
 			},
 			link: function(scope, element, attrs) {
-				element.css({
-					'background-image': 'url('+scope.bgSrc+')'
-				});
+				if(scope.bgSrc) {
+					element.css({
+						'background-image': 'url('+scope.bgSrc+')'
+					});
+				}
 			}
 		}
 	})
@@ -24121,6 +24123,44 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix']);;synthA
 				
 				//Call it once for init
 				scope.onResize();
+			}
+		}
+	})
+	.directive('synthCircle', function($timeout) {
+		function offset(elm) { 
+			try {return elm.offset();} catch(e) {} 
+			var rawDom = elm[0]; 
+			var _x = 0; 
+			var _y = 0; 
+			var body = document.documentElement || document.body; 
+			var scrollX = window.pageXOffset || body.scrollLeft; 
+			var scrollY = window.pageYOffset || body.scrollTop; 
+			_x = rawDom.getBoundingClientRect().left + scrollX; 
+			_y = rawDom.getBoundingClientRect().top + scrollY; 
+			return { left: _x, top:_y }; 
+		}
+	
+		return {
+			restrict: 'C',
+			link: function(scope, element, attrs) {
+				var duration = 250;
+				
+				element.bind('click', function(e) {
+					e.preventDefault();
+					
+					var x = e.pageX,
+						y = e.pageY,
+						setX = parseInt(x - offset(element).left),
+						setY = parseInt(y - offset(element).top);
+						
+					element.append('<svg><circle cx="'+setX+'" cy="'+setY+'" r="0"><animate attributeName="r" from="0" to="'+(this.offsetWidth/2)+'" dur="'+duration+'ms"/></circle></svg>');
+					
+					$timeout(function() {
+						element.find('svg').remove('svg');
+						window.location.href = e.target.href;
+					}, duration)
+					
+				});
 			}
 		}
 	})
