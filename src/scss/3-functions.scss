@@ -15,3 +15,9 @@ $zIndex: (
 	transition-duration: $duration;
 	transition-delay: $delay;
 }
+
+@mixin containerMiddle() {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

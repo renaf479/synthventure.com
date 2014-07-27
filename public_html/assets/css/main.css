@@ -8,6 +8,11 @@
   src: url("../fonts/Telavision.ttf");
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -79,7 +84,9 @@ img.size-medium {
 
 .transition,
 #footer,
+body.home #about-us,
 body.home #our-work,
+body.home #our-work .work,
 #nav,
 #nav .menu li a,
 #contact-us,
@@ -116,8 +123,8 @@ body.single #footer .content {
 body.home #cover {
   position: relative;
   width: 100%;
-  height: 500px;
-  background: transparent url(http://lorempixel.com/1300/500) no-repeat center top/100% auto;
+  height: 100%;
+  background: transparent url(http://lorempixel.com/1920/1080) no-repeat center top/cover;
 }
 
 body.home #cover:after {
@@ -138,6 +145,15 @@ body.home #about-us {
   height: 300px;
   background-repeat: no-repeat;
   background-size: 100% auto;
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0.02s;
+  transition-delay: 0.02s;
+}
+
+body.home #about-us.active {
+  opacity: 1;
 }
 
 body.home #about-us .right {
@@ -150,6 +166,7 @@ body.home #about-us .right {
 }
 
 body.home #our-work {
+  padding-bottom: 24px;
   opacity: 0;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
@@ -163,16 +180,57 @@ body.home #our-work.active {
 
 body.home #our-work .work {
   position: relative;
-  width: 330px;
-  height: 350px;
-  margin: 16px;
+  width: 250px;
+  height: 300px;
   overflow: hidden;
+  background-color: black;
 }
 
-body.home #our-work:after {
-  content: '';
-  display: table;
-  clear: both;
+body.home #our-work .work .title,
+body.home #our-work .work .thumbnail {
+  position: absolute;
+}
+
+body.home #our-work .work .thumbnail {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body.home #our-work .work:nth-of-type(2) {
+  width: 200px;
+  height: 150px;
+}
+
+body.home #our-work .work:nth-of-type(3) {
+  width: 225px;
+}
+
+body.home #our-work .work:nth-of-type(4) {
+  width: 275px;
+}
+
+body.home #our-work .work:nth-of-type(5) {
+  width: 200px;
+  height: 120px;
+}
+
+body.home #our-work .work:nth-of-type(6) {
+  width: 225px;
+}
+
+body.home #our-work .work:nth-of-type(7) {
+  width: 275px;
+}
+
+body.home #our-work .work:nth-of-type(8) {
+  width: 220px;
+}
+
+body.home #our-work .work:nth-of-type(9) {
+  width: 230px;
 }
 
 /***** ICONS *****/

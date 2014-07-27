@@ -24,32 +24,70 @@ synthApp
 		*/
 		return {
 			restrict: 'A',
-			scope: {
-				bgSrc: '@'
-			},
 			link: function(scope, element, attrs) {
-				if(scope.bgSrc) {
+				if(attrs.bgSrc) {
 					element.css({
-						'background-image': 'url('+scope.bgSrc+')'
+						'background-image': 'url('+attrs.bgSrc+')'
 					});
 				}
 			}
 		}
 	})
-	.directive('inView', function() {
+	.directive('inView', function($rootScope) {
 		/**
 		* Angular InView - extending with custom scope
 		*/
 		return {
 			restrict: 'A',
 			controller: function($scope, $element) {
-				$scope.inView = function(inview) {
-					if(inview) {
-						$element.addClass('active');
-					} else {
-						$element.removeClass('active');
+				if($rootScope.inView === undefined) {
+					$rootScope.inView = function(inview, element, hide) {
+						var element 	= angular.element(element),
+							className 	= (className)? className: 'active';
+						if(inview) {
+							element.addClass(className);
+						} else if(!inview && hide) {
+							element.removeClass(className);
+						}
+/*
+							if(inview) {
+								element.addClass(className);
+							} else {
+								element.removeClass(className);
+							}
+*/
+							
 					}
 				}
+			}
+		}
+	})
+	.directive('packery', function($rootScope) {
+		/**
+		* Packery.js directive
+		*/
+		return {
+			restrict: 'A',
+			link: function(scope, element, attrs) {
+				scope.packery = new Packery(element[0], {
+					itemSelector: '.work',
+					gutter: 16
+				});
+				
+				/*
+				           console.log('Running dannyPackery linking function!');
+            if($rootScope.packery === undefined || $rootScope.packery === null){
+                console.log('making packery!');
+                $rootScope.packery = new Packery(element[0].parentElement, {columnWidth: '.item'});
+                $rootScope.packery.bindResize();
+                $rootScope.packery.appended(element[0]);
+                $rootScope.packery.items.splice(1,1); // hack to fix a bug where the first element was added twice in two different positions
+            }
+            else{
+                $rootScope.packery.appended(element[0]);
+            }
+            $rootScope.packery.layout();
+				*/
 			}
 		}
 	})

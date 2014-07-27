@@ -12,7 +12,8 @@ synthApp
 				title: '@',
 				content: '@',
 				link: '@',
-				linkContent: '@'
+				linkContent: '@',
+				inView: '@'
 			}
 		}
 	});

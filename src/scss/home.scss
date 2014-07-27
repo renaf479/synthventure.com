@@ -2,8 +2,8 @@ body.home {
 	#cover {
 		position: relative;
 		width: 100%;
-		height: 500px;
-		background: transparent url(http://lorempixel.com/1300/500) no-repeat center top/100% auto;
+		height: 100%;
+		background: transparent url(http://lorempixel.com/1920/1080) no-repeat center top/cover;
 		
 		&:after {
 			position: absolute;
@@ -26,11 +26,20 @@ body.home {
 	}
 	
 	#about-us {
+		@extend .transition;
+		
 		position: relative;
 		width: $containerWidth;
 		height: 300px;
 		background-repeat: no-repeat;
 		background-size: 100% auto;
+		opacity: 0;
+		
+		@include animation(.3s, .02s);
+		
+		&.active {
+			opacity: 1;
+		}
 		
 		.right {
 			position: absolute;
@@ -45,6 +54,7 @@ body.home {
 	#our-work {
 		@extend .transition;
 		
+		padding-bottom: $gridUnit*3;
 		opacity: 0;
 		
 		@include animation(.4s, .05s);
@@ -54,34 +64,61 @@ body.home {
 		}
 		
 		.work {
-			position: relative;
-			width: 330px;
-			height: 350px;
-			margin: $gridUnit*2;
-			overflow: hidden;
+			@extend .transition;
 			
-/*
-			&:nth-of-type(3) {
-				clear: both;
+			position: relative;
+			width: 250px;
+			height: 300px;
+			overflow: hidden;
+			background-color: black;
+		
+			
+			.title,
+			.thumbnail {
+				position: absolute;
 			}
 			
-			&:nth-of-type(2),
-			&:nth-of-type(3) {
-				width: 250px;
+			.title {
+				
+			}
+			
+			.thumbnail {
+				@include containerMiddle();
+			}
+			
+			&:nth-of-type(2) {
+				width: 200px;
 				height: 150px;
 			}
 			
-			&:nth-of-type(4),
-			&:nth-of-type(5) {
-				width: 300px;
+			&:nth-of-type(3) {
+				width: 225px;
 			}
-*/
-		}
-		
-		&:after {
-			content: '';
-			display: table;
-			clear: both;
+			
+			&:nth-of-type(4) {
+				width: 275px;
+			}
+			
+			&:nth-of-type(5) {
+				width: 200px;
+				height: 120px;
+			}
+			
+			&:nth-of-type(6) {
+				width: 225px;
+			}
+			
+			&:nth-of-type(7) {
+				width: 275px;
+			}
+			
+			&:nth-of-type(8) {
+				width: 220px;
+			}
+			
+			&:nth-of-type(9) {
+				width: 230px;
+			}
 		}
 	}
 }

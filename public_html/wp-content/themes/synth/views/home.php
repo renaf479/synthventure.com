@@ -22,7 +22,7 @@
 	<div class="container">
 		<!-- ABOUT US (Static) -->
 		<?php if(have_posts()) while(have_posts()): the_post(); ?>
-		<div id="about-us" data-bg-src="<?php echo $aboutUsImage[0];?>">
+		<div id="about-us" data-bg-src="<?php echo $aboutUsImage[0];?>" data-in-view="inView($inview, $element, true)">
 			<div class="left"></div>
 			<div class="right">
 				<h2 class="title"><?php the_title();?></h2>
@@ -32,8 +32,8 @@
 		<?php endwhile;?>
 		
 		<!-- WORKS (Post) -->
-		<div id="our-work" data-in-view="inView($inview)">
-			<h2 class="title">Our Work</h2>
+		<h2 class="title">Our Work</h2>
+		<div id="our-work" data-in-view="inView($inview, $element, false)" data-packery>
 			<?php if($works) foreach($works as $post): setup_postdata($post);?>
 			<a href="<?php the_permalink();?>" class="work">
 				<h3 class="title"><?php the_title();?></h3>
@@ -42,7 +42,7 @@
 			<?php endforeach;?>
 		</div>
 	</div>
-	<contact-us title="Start Your Project Today" content="Contact us today to start working. We're as excited as you are!" link="http://www.google.com" link-content="Contact Us"></contact-us>
+	<contact-us title="Start Your Project Today" content="Contact us today to start working. We're as excited as you are!" link="http://www.google.com" link-content="Contact Us" in-view="inView($inview, $element, true)"></contact-us>
 	
 
 <?php get_footer(); ?>

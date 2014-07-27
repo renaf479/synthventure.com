@@ -14,7 +14,7 @@
         </title>
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class(); ?>>
+    <body <?php body_class(); ?> data-ng-controller="synthCtrl">
     	<nav id="nav" data-ui-scrollfix="+10">
     		<div class="container">
 			<?php 
