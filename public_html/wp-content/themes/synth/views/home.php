@@ -4,6 +4,7 @@
 	$catSlug = 'works';
 	
 	$workArgs = array(
+		'posts_per_page'=>9,
 		'category'=>get_category_by_slug($catSlug)->term_id
 	);
 	$works = get_posts($workArgs);
@@ -31,13 +32,13 @@
 		<?php endwhile;?>
 		
 		<!-- WORKS (Post) -->
-		<div id="our-work">
+		<div id="our-work" data-in-view="inView($inview)">
 			<h2 class="title">Our Work</h2>
 			<?php if($works) foreach($works as $post): setup_postdata($post);?>
-			<div class="work">
+			<a href="<?php the_permalink();?>" class="work">
 				<h3 class="title"><?php the_title();?></h3>
-				<?php the_post_thumbnail('large', array('class'=>'thumbnail'));?>
-			</div>
+				<?php the_post_thumbnail('medium', array('class'=>'thumbnail'));?>
+			</a>
 			<?php endforeach;?>
 		</div>
 	</div>

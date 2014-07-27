@@ -10,3 +10,8 @@ $zIndex: (
 	height: $height;
 	line-height: $height;
 }
+
+@mixin animation($duration, $delay) {
+	transition-duration: $duration;
+	transition-delay: $delay;
+}

@@ -42,6 +42,11 @@ h5 {
   padding: 0;
 }
 
+.synth-circle {
+  position: relative;
+  overflow: hidden;
+}
+
 svg {
   position: absolute;
   top: 0;
@@ -73,6 +78,8 @@ img.size-medium {
 }
 
 .transition,
+#footer,
+body.home #our-work,
 #nav,
 #nav .menu li a,
 #contact-us,
@@ -140,6 +147,32 @@ body.home #about-us .right {
   width: 50%;
   height: inherit;
   background-color: rgba(255, 143, 69, 0.75);
+}
+
+body.home #our-work {
+  opacity: 0;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+
+body.home #our-work.active {
+  opacity: 1;
+}
+
+body.home #our-work .work {
+  position: relative;
+  width: 330px;
+  height: 350px;
+  margin: 16px;
+  overflow: hidden;
+}
+
+body.home #our-work:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /***** ICONS *****/
@@ -2091,8 +2124,10 @@ body.single .content .article-overlay img.size-full {
 }
 
 #contact-us {
-  -webkit-transition-delay: .25s;
-  transition-delay: .25s;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+  -webkit-transition-delay: .05s;
+  transition-delay: .05s;
   width: 100%;
   /* min-height: $gridUnit * 25; */
   /* padding: $gridUnit*3; */

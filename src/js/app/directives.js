@@ -1,5 +1,8 @@
 synthApp
 	.directive('articleOverlay', function() {
+		/**
+		* Allows full-width images outside any parent container restrictions
+		*/
 		return {
 			restrict: 'C',
 			replace: true,
@@ -16,6 +19,9 @@ synthApp
 		}
 	})
 	.directive('bgSrc', function() {
+		/**
+		* Sets the background-image property of an element
+		*/
 		return {
 			restrict: 'A',
 			scope: {
@@ -30,35 +36,27 @@ synthApp
 			}
 		}
 	})
-	.directive('contactUs', function() {
+	.directive('inView', function() {
+		/**
+		* Angular InView - extending with custom scope
+		*/
 		return {
-			restrict: 'E',
-			replace: true,
-			transclude: true,
-			templateUrl: 'contact-us.html',
-			scope: {
-				title: '@',
-				content: '@',
-				link: '@',
-				linkContent: '@'
-			},
+			restrict: 'A',
 			controller: function($scope, $element) {
-				$scope.lineInView = function(inview) {
+				$scope.inView = function(inview) {
 					if(inview) {
 						$element.addClass('active');
+					} else {
+						$element.removeClass('active');
 					}
-/*
-var inViewReport = inview ? '<strong>enters</strong>' : '<strong>exit</strong>';
-if (typeof(inviewpart) != 'undefined') {
-inViewReport = '<strong>' + inviewpart + '</strong> part ' + inViewReport;
-}
-$scope.inviewLogs.unshift({ id: logId++, message: $sce.trustAsHtml('Line <em>#' + index + '</em>: ' + inViewReport) });
-*/
 				}
 			}
 		}
 	})
 	.directive('resize', function($window) {
+		/**
+		* Detects resizing of DOM window
+		*/
 		return {
 			restrict: 'E',
 			link: function(scope, element, attrs) {
@@ -78,6 +76,9 @@ $scope.inviewLogs.unshift({ id: logId++, message: $sce.trustAsHtml('Line <em>#' 
 		}
 	})
 	.directive('synthCircle', function($timeout) {
+		/**
+		* Ripple button click effect
+		*/
 		function offset(elm) { 
 			try {return elm.offset();} catch(e) {} 
 			var rawDom = elm[0]; 
@@ -105,12 +106,11 @@ $scope.inviewLogs.unshift({ id: logId++, message: $sce.trustAsHtml('Line <em>#' 
 						setY = parseInt(y - offset(element).top);
 						
 					element.append('<svg><circle cx="'+setX+'" cy="'+setY+'" r="0"><animate attributeName="r" from="0" to="'+(this.offsetWidth/2)+'" dur="'+duration+'ms"/></circle></svg>');
-					
+				
 					$timeout(function() {
 						element.find('svg').remove('svg');
-						window.location.href = e.target.href;
+						window.location.href = element.find('a').attr('href');
 					}, duration)
-					
 				});
 			}
 		}

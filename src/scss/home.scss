@@ -41,4 +41,47 @@ body.home {
 			background-color: rgba($colorPrimary, .75);
 		}
 	}
+	
+	#our-work {
+		@extend .transition;
+		
+		opacity: 0;
+		
+		@include animation(.4s, .05s);
+		
+		&.active {
+			opacity: 1;
+		}
+		
+		.work {
+			position: relative;
+			width: 330px;
+			height: 350px;
+			margin: $gridUnit*2;
+			overflow: hidden;
+			
+/*
+			&:nth-of-type(3) {
+				clear: both;
+			}
+			
+			&:nth-of-type(2),
+			&:nth-of-type(3) {
+				width: 250px;
+				height: 150px;
+			}
+			
+			&:nth-of-type(4),
+			&:nth-of-type(5) {
+				width: 300px;
+			}
+*/
+		}
+		
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
 }

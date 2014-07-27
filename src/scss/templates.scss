@@ -1,7 +1,8 @@
 #contact-us {
 	@extend .transition;
 	
-	transition-delay: .25s;
+	transition-duration: .4s;
+	transition-delay: .05s;
 	width: 100%;
 	/* min-height: $gridUnit * 25; */
 	/* padding: $gridUnit*3; */
