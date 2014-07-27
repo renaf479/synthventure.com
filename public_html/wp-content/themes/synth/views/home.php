@@ -41,6 +41,8 @@
 			<?php endforeach;?>
 		</div>
 	</div>
+	<contact-us title="Start Your Project Today" content="Contact us today to start working. We're as excited as you are!" link="http://www.google.com" link-content="Contact Us"></contact-us>
+	
 
 <?php get_footer(); ?>
 

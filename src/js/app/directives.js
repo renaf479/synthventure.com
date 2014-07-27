@@ -30,6 +30,34 @@ synthApp
 			}
 		}
 	})
+	.directive('contactUs', function() {
+		return {
+			restrict: 'E',
+			replace: true,
+			transclude: true,
+			templateUrl: 'contact-us.html',
+			scope: {
+				title: '@',
+				content: '@',
+				link: '@',
+				linkContent: '@'
+			},
+			controller: function($scope, $element) {
+				$scope.lineInView = function(inview) {
+					if(inview) {
+						$element.addClass('active');
+					}
+/*
+var inViewReport = inview ? '<strong>enters</strong>' : '<strong>exit</strong>';
+if (typeof(inviewpart) != 'undefined') {
+inViewReport = '<strong>' + inviewpart + '</strong> part ' + inViewReport;
+}
+$scope.inviewLogs.unshift({ id: logId++, message: $sce.trustAsHtml('Line <em>#' + index + '</em>: ' + inViewReport) });
+*/
+				}
+			}
+		}
+	})
 	.directive('resize', function($window) {
 		return {
 			restrict: 'E',

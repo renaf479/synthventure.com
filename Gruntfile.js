@@ -60,10 +60,10 @@ module.exports = function(grunt) {
 				expand: true
 			},
 			cssDev: {
-				files: {'public_html/css/main.css': ['build/css/main.css']}
+				files: {'public_html/assets/css/main.css': ['build/css/main.css']}
 			},
 			jsDev: {
-				files: {'public_html/js/main.js': ['build/js/main.js']}
+				files: {'public_html/assets/js/main.js': ['build/js/main.js']}
 			}
 	    },
 		/** Minifies CSS **/

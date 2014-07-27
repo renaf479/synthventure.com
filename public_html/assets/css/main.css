@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/Roboto-Regular.ttf");
+  src: url("../fonts/Roboto-Thin.ttf");
 }
 
 @font-face {
@@ -74,16 +74,36 @@ img.size-medium {
 
 .transition,
 #nav,
-#nav .menu li a {
+#nav .menu li a,
+#contact-us,
+#contact-us .link {
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
 
 #footer {
   width: 100%;
-  height: 100px;
-  background-color: #000;
+  height: 200px;
+  position: relative;
+  background-color: #393d42;
   color: white;
+}
+
+#footer .container,
+#footer body.single .content,
+body.single #footer .content {
+  padding: 16px;
+  height: inherit;
+}
+
+#footer .copyright {
+  font-size: .8em;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  bottom: 24px;
+  width: inherit;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 8px;
 }
 
 body.home #cover {
@@ -119,7 +139,7 @@ body.home #about-us .right {
   right: 0;
   width: 50%;
   height: inherit;
-  background-color: rgba(156, 39, 176, 0.75);
+  background-color: rgba(255, 143, 69, 0.75);
 }
 
 /***** ICONS *****/
@@ -1979,7 +1999,7 @@ body.home #about-us .right {
 }
 
 #nav.ui-scrollfix {
-  background-color: #9c27b0;
+  background-color: #ff8f45;
   height: 56px;
   line-height: 56px;
 }
@@ -2068,4 +2088,49 @@ body.single .content .article-overlay {
 body.single .content .article-overlay img.size-full {
   width: 100%;
   height: auto;
+}
+
+#contact-us {
+  -webkit-transition-delay: .25s;
+  transition-delay: .25s;
+  width: 100%;
+  /* min-height: $gridUnit * 25; */
+  /* padding: $gridUnit*3; */
+  height: 0;
+  padding: 0;
+  background-color: #ff8f45;
+  color: white;
+}
+
+#contact-us.active {
+  min-height: 200px;
+  padding: 24px;
+}
+
+#contact-us .title {
+  font-size: 2.2em;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#contact-us .content {
+  padding: 8px;
+  text-align: center;
+}
+
+#contact-us .link {
+  border-radius: 3px;
+  font-size: 1.3em;
+  text-align: center;
+  border: 2px solid #fff;
+  width: 150px;
+  display: block;
+  margin: 16px auto;
+  height: 56px;
+  line-height: 56px;
+}
+
+#contact-us .link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

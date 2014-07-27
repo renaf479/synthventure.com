@@ -1,2 +1,2 @@
 // initialize the app
-var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix']);
+var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular-inview']);

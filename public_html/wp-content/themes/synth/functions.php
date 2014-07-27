@@ -7,36 +7,26 @@
 		register_nav_menu('top', 'Nav');
 		register_nav_menu('top-right', 'Social');
 	}
-	
 	add_action('after_setup_theme', 'synth_setup');
 	
 	function synth_widgets() {
 		//Register Widget locations
+		register_sidebar(
+			array(
+				'name' => 'Footer',
+				'id' => 'footer',
+				'before_widget' => '',
+				'after_widget' => '',
+				'before_title' => '',
+				'after_title' => '',
+			)
+		);
 	}
 	add_action('widgets_init', 'synth_widgets');
 	
 	function synth_scripts() {
-		wp_enqueue_style('main', '/css/main.css');
-		wp_enqueue_script('main', '/js/main.js');
-		
-		/*
-  // register AngularJS
-  //wp_register_script('angular-core', get_bloginfo('template_directory').'/js/angular.js', array(), null, false);
-
-  // register our app.js, which has a dependency on angular-core
-  wp_register_script('angular-app', get_bloginfo('template_directory').'/js/main.js');
-
-  // enqueue all scripts
-  //wp_enqueue_script('angular-core');
-  wp_enqueue_script('angular-app');
-
-  // we need to create a JavaScript variable to store our API endpoint...   
-  wp_localize_script( 'angular-core', 'AppAPI', array( 'url' => get_bloginfo('wpurl').'/api/') ); // this is the API address of the JSON API plugin
-  // ... and useful information such as the theme directory and website url
-  wp_localize_script( 'angular-core', 'BlogInfo', array( 'url' => get_bloginfo('template_directory').'/', 'site' => get_bloginfo('wpurl')) );
-  
-  
-  */
+		wp_enqueue_style('main', '/assets/css/main.css');
+		wp_enqueue_script('main', '/assets/js/main.js', array(), '', true);
 	}
 	
 	function synth_editor_buttons($buttons) {
