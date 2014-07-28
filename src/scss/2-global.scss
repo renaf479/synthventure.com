@@ -69,6 +69,12 @@ circle {
 	float: right;
 }
 
+.pseudoClear {
+	content: '';
+	display: table;
+	clear: both;
+}
+
 img {
 	&.size-medium {
 		margin: $gridUnit $gridUnit*2;

@@ -48,21 +48,13 @@ synthApp
 							element.addClass(className);
 						} else if(!inview && hide) {
 							element.removeClass(className);
-						}
-/*
-							if(inview) {
-								element.addClass(className);
-							} else {
-								element.removeClass(className);
-							}
-*/
-							
+						}							
 					}
 				}
 			}
 		}
 	})
-	.directive('packery', function($rootScope) {
+	.directive('packery', function($timeout) {
 		/**
 		* Packery.js directive
 		*/
@@ -70,10 +62,10 @@ synthApp
 			restrict: 'A',
 			link: function(scope, element, attrs) {
 				scope.packery = new Packery(element[0], {
-					itemSelector: '.work',
-					gutter: 16
+					gutter: 16,
+					itemSelector: '.work'
 				});
-				
+
 				/*
 				           console.log('Running dannyPackery linking function!');
             if($rootScope.packery === undefined || $rootScope.packery === null){
