@@ -56,7 +56,7 @@
 	<!-- WORKS (Post) -->
 	<div id="our-work">
 		<h2 class="title">Our Work</h2>
-		<div class="container" data-packery>
+		<div data-packery>
 			<?php if($works) foreach($works as $key=>$post): setup_postdata($post);?>
 			<a href="<?php the_permalink();?>" class="work <?php echo $workClass[$key];?>" data-in-view="inView($inview, $element, false)">
 				<h3 class="title"><?php the_title();?></h3>

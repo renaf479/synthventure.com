@@ -65,6 +65,7 @@ circle {
 }
 
 .container,
+body.home #our-work,
 body.single .content {
   width: 1000px;
   margin: 0 auto;
@@ -109,6 +110,8 @@ body.home #our-work .work,
 }
 
 #footer .container,
+#footer body.home #our-work,
+body.home #footer #our-work,
 #footer body.single .content,
 body.single #footer .content {
   padding: 16px;
@@ -127,6 +130,10 @@ body.single #footer .content {
 
 
 
+body.home .title {
+  font-size: 3em;
+}
+
 body.home #cover {
   position: relative;
   width: 100%;
@@ -143,7 +150,7 @@ body.home #cover:after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 143, 69, 0.2);
 }
 
 body.home #cover .tagline {
@@ -162,7 +169,7 @@ body.home #about-us,
 body.home #our-services {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 50%;
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -171,36 +178,26 @@ body.home #our-services {
 
 body.home #about-us .wrapper,
 body.home #our-services .wrapper {
-  width: 100%;
-  margin-left: -1000px;
-  padding: 20px 1000px;
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
-body.home #about-us .title,
-body.home #our-services .title {
-  font-size: 3em;
+body.home #about-us .wrapper {
+  right: 0;
 }
 
 body.home #our-work {
-  width: 100%;
+  padding-bottom: 32px;
 }
 
-body.home #our-work .left,
-body.home #our-work .right {
-  position: relative;
-  width: 50%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-body.home #our-work .left .title {
-  position: absolute;
-  font-size: 2.5em;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+body.home #our-work .title {
+  text-align: center;
+  margin: 32px auto;
 }
 
 body.home #our-work .work {
@@ -2100,6 +2097,8 @@ body.home #our-work .work .thumbnail {
 }
 
 #nav .container,
+#nav body.home #our-work,
+body.home #nav #our-work,
 #nav body.single .content,
 body.single #nav .content {
   width: 1200px;
