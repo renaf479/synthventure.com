@@ -5,7 +5,7 @@
 	height: 200px;
 	position: relative;
 	background-color: $windowBlack;
-	color: $textColorInverse;
+	color: $textColorPrimaryInverse;
 	
 	.container {
 		padding: $gridUnit *2;
@@ -14,7 +14,7 @@
 	
 	.copyright {
 		font-size: .8em;
-		color: rgba($textColorInverse, .4);
+		color: rgba($textColorPrimaryInverse, .4);
 		position: absolute;
 		bottom: $gridUnit * 3;
 		width: inherit;

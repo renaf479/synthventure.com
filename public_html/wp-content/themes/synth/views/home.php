@@ -10,7 +10,7 @@
 	$works = get_posts($workArgs);
 	$aboutUsImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
 	
-	$workClass = array('full', 'small', 'full', 'full', 'small', 'wide', 'full', 'full', 'full');
+	//$workClass = array('full', 'small', 'full', 'full', 'small', 'wide', 'full', 'full', 'full');
 	
 	$servicesArgs = array(
 		'name'=>'our-services',
@@ -58,7 +58,7 @@
 		<h2 class="title">Our Work</h2>
 		<div data-packery>
 			<?php if($works) foreach($works as $key=>$post): setup_postdata($post);?>
-			<a href="<?php the_permalink();?>" class="work <?php echo $workClass[$key];?>" data-in-view="inView($inview, $element, false)">
+			<a href="<?php the_permalink();?>" class="work" data-in-view="inView($inview, $element, false)">
 				<h3 class="title"><?php the_title();?></h3>
 				<?php the_post_thumbnail('medium', array('class'=>'thumbnail'));?>
 			</a>

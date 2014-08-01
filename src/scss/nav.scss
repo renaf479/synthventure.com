@@ -5,7 +5,7 @@
 	top: 0;
 	width: 100%;
 	z-index: map-get($zIndex, nav);
-	color: $textColorInverse;
+	color: $textColorPrimaryInverse;
 	text-decoration: none;
 	font-size: 1.2em;
 	font-family: 'Telavision';
@@ -15,7 +15,7 @@
 	@include height($navHeight);
 	
 	&.ui-scrollfix {
-		background-color: $colorPrimary;
+		background-color: $windowBackground;
 		
 		@include height($navHeight + $gridUnit*2);
 	}
@@ -28,7 +28,7 @@
 		float: left;
 		width: $navWidth/2;
 		height: inherit;
-		color: $textColorInverse;
+		color: $textColorPrimaryInverse;
 		margin: 0 auto;
 		padding: 0;
 		list-style: none;
@@ -44,10 +44,10 @@
 				
 				border-width: 0 0 1px 0;
 				border-style: solid;
-				border-color: rgba($textColorInverse, 0);
+				border-color: rgba($textColorPrimaryInverse, 0);
 				
 				&:hover {
-					border-color: rgba($textColorInverse, 1);
+					border-color: rgba($textColorPrimaryInverse, 1);
 				}
 			}
 		}

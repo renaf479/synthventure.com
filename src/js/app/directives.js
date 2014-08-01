@@ -145,24 +145,19 @@ synthApp
 			}
 		}
 	})
-	
+	.directive('synthTile', function() {
+		/**
+		* Randomizes tile sizes
+		*/
+		return {
+			restrict: 'A',
+			link: function(scope, element, attrs) {
+				//return Math.random() * (max - min) + min;
+				element.css({
+					'width': Math.random() * (234 - 150) + 150 + 'px',
+					'height': Math.random() * (350 - 150) + 150 + 'px'
+				});
+			}
+		}
+	})
 ;
-	/*
-	var app=angular.module('App', []);
-app.directive('elheightresize', ['$window', function($window) {
-    return {
-        link: function(scope, elem, attrs) {
-            scope.onResize = function() {
-                var header = document.getElementsByTagName('header')[0];
-                elem.windowHeight = $window.innerHeight - header.clientHeight;
-                $(elem).height(elem.windowHeight);
-            }
-            scope.onResize();
-
-            angular.element($window).bind('resize', function() {
-                scope.onResize();
-            })
-        }
-    }
-}])
-	*/

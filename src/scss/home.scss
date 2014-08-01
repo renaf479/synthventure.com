@@ -1,14 +1,16 @@
 body.home {
 	.title {
-		font-size: 3em;
+		font-size: 2.7em;
 	}
 
 	#cover {
 		position: relative;
 		width: 100%;
 		height: 100%;
-		background: transparent url(http://lorempixel.com/1920/1080) no-repeat center top/cover;
+		background: transparent url(../images/cover.jpg) no-repeat center top/cover;
+		overflow: hidden;
 		
+/*
 		&:after {
 			position: absolute;
 			content: '';
@@ -20,6 +22,7 @@ body.home {
 			bottom: 0;
 			background-color: rgba($colorPrimary, .2);
 		}
+*/
 		
 		.logo {
 		}
@@ -27,10 +30,13 @@ body.home {
 		.tagline {
 			position: absolute;
 			z-index: map-get($zIndex, content);
-			color: $textColorInverse;
+			color: $textColorPrimaryInverse;
 			font-size: 4em;
+			width: 100%;
+			text-align: center;
+			top: 50%;
+			transform: translate(0, -50%);
 			
-			@include containerMiddle();
 		}
 	}
 	
@@ -39,6 +45,7 @@ body.home {
 		position: relative;
 		width: 100%;
 		height: 50%;
+		min-height: 600px;
 		
 		background-position: center top;
 		background-repeat: no-repeat;
@@ -49,8 +56,9 @@ body.home {
 			position: absolute;
 			width: 50%;
 			top: 50%;
+			left: 50%;
 			text-align: center;
-			transform: translate(0, -50%);
+			transform: translate(-50%, -50%);
 		}
 		
 		.content {
@@ -65,7 +73,16 @@ body.home {
 
 	#our-services {
 		.wrapper {
-			
+			color: $textColorPrimaryInverse;
+			z-index: map-get($zIndex, content);
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#000, .8);
 		}
 	}	
 /*
@@ -114,6 +131,7 @@ body.home {
 				opacity: 1;
 			}
 			
+/*
 			&.full {
 				
 			}
@@ -126,6 +144,7 @@ body.home {
 			&.small {
 				height: calc(150px - 8px);
 			}
+*/
 			
 			.title,
 			.thumbnail {
