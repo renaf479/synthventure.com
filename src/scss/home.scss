@@ -44,8 +44,6 @@ body.home {
 	#our-services {
 		position: relative;
 		width: 100%;
-		height: 50%;
-		min-height: 600px;
 		
 		background-position: center top;
 		background-repeat: no-repeat;
@@ -54,11 +52,7 @@ body.home {
 		
 		.wrapper {
 			position: absolute;
-			width: 50%;
-			top: 50%;
-			left: 50%;
 			text-align: center;
-			transform: translate(-50%, -50%);
 		}
 		
 		.content {
@@ -66,12 +60,38 @@ body.home {
 	}
 	
 	#about-us {
-		.wrapper {
-			right: 0;
+		height: 40%;
+		min-height: 400px;
+		
+		.left,
+		.right {
+			width: 50%;
+			height: 100%;
+			float: left;
+			text-align: center;
+			position: relative;
+		}
+		
+		.left {
+			background-color: $colorPrimary;
+			font-size: 4em;
+		}
+		
+		.right {
+			.wrapper {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		
+		.right:after {
+			@include pseudoClear();
 		}
 	}
 
 	#our-services {
+		height: 60%;
+		min-height: 600px;
 		.wrapper {
 			color: $textColorPrimaryInverse;
 			z-index: map-get($zIndex, content);
@@ -131,6 +151,19 @@ body.home {
 				opacity: 1;
 			}
 			
+			&.small {
+				height: calc((300px - 16px)/2);
+			}
+			
+			&.thin {
+				width: calc(20% - 16px);
+			}
+			
+			&.wide {
+				width: 384px;
+				height: calc((300px - 16px)/2);
+			}
+			
 /*
 			&.full {
 				
@@ -156,6 +189,7 @@ body.home {
 			}
 			
 			.thumbnail {
+				@include containerMiddle();
 			}
 			
 /*

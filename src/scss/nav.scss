@@ -9,15 +9,24 @@
 	text-decoration: none;
 	font-size: 1.2em;
 	font-family: 'Telavision';
+	font-weight: bold;
 	letter-spacing: 2px;
 	
 
-	@include height($navHeight);
+	@include height($navHeight*.7);
 	
 	&.ui-scrollfix {
 		background-color: $windowBackground;
 		
-		@include height($navHeight + $gridUnit*2);
+		@include height($navHeight);
+		
+		li {
+			border: 1px solid $windowBorder;
+		}
+		
+		a {
+			color: $textColorPrimary;
+		}
 	}
 	
 	.container {

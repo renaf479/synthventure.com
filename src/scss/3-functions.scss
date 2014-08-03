@@ -21,3 +21,9 @@ $zIndex: (
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+@mixin pseudoClear() {
+	content: '';
+	display: table;
+	clear: both;
+}
