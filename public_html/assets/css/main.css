@@ -48,28 +48,8 @@ h5 {
   padding: 0;
 }
 
-.synth-circle {
-  position: relative;
-  overflow: hidden;
-}
-
-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-circle {
-  fill: rgba(255, 255, 255, 0.1);
-}
-
-.container,
-body.home #our-work,
-body.single .content {
-  width: 1000px;
-  margin: 0 auto;
+img.size-medium {
+  margin: 8px 16px;
 }
 
 .alignleft {
@@ -80,14 +60,40 @@ body.single .content {
   float: right;
 }
 
-img.size-medium {
-  margin: 8px 16px;
+.container,
+body.home #our-work,
+body.single .content {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 100px;
+  fill: #fa8b08;
+}
+
+.synth-circle {
+  position: relative;
+  overflow: hidden;
+}
+
+.synth-circle svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.synth-circle circle {
+  fill: rgba(255, 255, 255, 0.1);
 }
 
 .transition,
 #footer,
 body.home #our-work,
 body.home #our-work .work,
+body.home #our-work .work:after,
 #nav,
 #nav .menu li a,
 #contact-us,
@@ -133,8 +139,21 @@ body.home #cover {
   position: relative;
   width: 100%;
   height: 100%;
-  background: transparent url(../images/cover.jpg) no-repeat center top/cover;
+  background: transparent url(../images/homepage-cover.jpg) no-repeat center top/cover;
   overflow: hidden;
+}
+
+body.home #cover:after {
+  background: transparent url(../images/waves.png) no-repeat center top/cover;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .7;
 }
 
 body.home #cover .tagline {
@@ -181,13 +200,16 @@ body.home #about-us .right {
 }
 
 body.home #about-us .left {
-  background-color: #ff8f45;
+  background-color: #fa8b08;
   font-size: 4em;
 }
 
 body.home #about-us .right .wrapper {
-  display: inline-block;
-  vertical-align: middle;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 body.home #about-us .right:after {
@@ -218,11 +240,6 @@ body.home #our-work {
   padding-bottom: 32px;
 }
 
-body.home #our-work .title {
-  text-align: center;
-  margin: 32px auto;
-}
-
 body.home #our-work .work {
   position: relative;
   width: -webkit-calc(25% - 16px);
@@ -235,10 +252,61 @@ body.home #our-work .work {
   transition-duration: 0.4s;
   -webkit-transition-delay: 0.05s;
   transition-delay: 0.05s;
+  /*
+      			.title {
+      				@extend .transition;
+      				
+      				position: relative;
+      				width: 100%;
+      				height: 100%;
+      				display: inline-block;
+      				vertical-align: middle;
+      				text-align: center;
+      				margin: $gridUnit*4 auto;
+      				z-index: map-get($zIndex, content);
+      				transform: scale(2);
+      				opacity: 0;
+      			}
+      */
+}
+
+body.home #our-work .work .title {
+  position: absolute;
+}
+
+body.home #our-work .work .thumbnail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 body.home #our-work .work.active {
   opacity: 1;
+}
+
+body.home #our-work .work:after {
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background-color: rgba(250, 139, 8, 0.7);
+  opacity: 0;
+}
+
+
+
+body.home #our-work .work:hover:after {
+  opacity: 1;
+  height: 100%;
+}
+
+body.home #our-work .work.full:after {
+  bottom: 0;
 }
 
 body.home #our-work .work.small {
@@ -246,9 +314,17 @@ body.home #our-work .work.small {
   height: calc((300px - 16px)/2);
 }
 
+body.home #our-work .work.small:after {
+  left: 0;
+}
+
 body.home #our-work .work.thin {
   width: -webkit-calc(20% - 16px);
   width: calc(20% - 16px);
+}
+
+body.home #our-work .work.thin:after {
+  top: 0;
 }
 
 body.home #our-work .work.wide {
@@ -257,17 +333,8 @@ body.home #our-work .work.wide {
   height: calc((300px - 16px)/2);
 }
 
-body.home #our-work .work .title,
-body.home #our-work .work .thumbnail {
-  position: absolute;
-}
-
-body.home #our-work .work .thumbnail {
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+body.home #our-work .work.wide:after {
+  right: 0;
 }
 
 /***** ICONS *****/
@@ -2129,6 +2196,7 @@ body.home #our-work .work .thumbnail {
 
 #nav.ui-scrollfix {
   background-color: #f9f9f9;
+  border-bottom: 1px solid rgba(57, 61, 66, 0.12);
   height: 64px;
   line-height: 64px;
 }
@@ -2239,7 +2307,7 @@ body.single .content .article-overlay img.size-full {
   /* padding: $gridUnit*3; */
   height: 0;
   padding: 0;
-  background-color: #ff8f45;
+  background-color: #fa8b08;
   color: white;
 }
 

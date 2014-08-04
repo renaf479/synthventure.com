@@ -145,6 +145,20 @@ synthApp
 			}
 		}
 	})
+	.directive('synthLogo', function() {
+		/**
+		* Generate Logo
+		*/
+		return {
+			restrict: 'E',
+			transclude: true,
+			templateUrl: 'synth-logo.html',
+			replace: true,
+			link: function(scope, element, attrs) {
+				
+			}
+		}
+	})
 	.directive('synthTile', function() {
 		/**
 		* Randomizes tile sizes

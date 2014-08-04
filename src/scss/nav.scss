@@ -17,6 +17,7 @@
 	
 	&.ui-scrollfix {
 		background-color: $windowBackground;
+		border-bottom: 1px solid $windowBorder;
 		
 		@include height($navHeight);
 		

@@ -40,26 +40,10 @@ h1, h2, h3, h4, h5 {
 	padding: 0;
 }
 
-.synth-circle {
-	position: relative;
-	overflow: hidden;
-}
-
-svg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-circle {
-	fill: rgba(#fff, .1);
-}
-
-.container {
-	width: $containerWidth;
-	margin: 0 auto;
+img {
+	&.size-medium {
+		margin: $gridUnit $gridUnit*2;
+	}
 }
 
 .alignleft {
@@ -70,9 +54,30 @@ circle {
 	float: right;
 }
 
-img {
-	&.size-medium {
-		margin: $gridUnit $gridUnit*2;
+.container {
+	width: $containerWidth;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 100px;
+	fill: $colorPrimary;
+}
+
+.synth-circle {
+	position: relative;
+	overflow: hidden;
+	
+	svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	
+	circle {
+		fill: rgba(#fff, .1);
 	}
 }
 

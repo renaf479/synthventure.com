@@ -19,6 +19,8 @@
 			<?php endif; ?>
 			
 			<div class="copyright"><?php the_field('copyright', $footer->ID);?></div>
+			
+			<synth-logo></synth-logo>
 		</div>
 	</footer>
 	</body>
