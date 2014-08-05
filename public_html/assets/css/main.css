@@ -2210,7 +2210,6 @@ body.home #our-work .work.wide:after {
 #nav.ui-scrollfix {
   background-color: #f9f9f9;
   border-bottom: 1px solid rgba(57, 61, 66, 0.12);
-  font-weight: normal;
   height: 64px;
   line-height: 64px;
 }
