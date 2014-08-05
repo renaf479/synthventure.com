@@ -139,7 +139,12 @@ synthApp
 				
 					$timeout(function() {
 						element.find('svg').remove('svg');
-						window.location.href = element.find('a').attr('href');
+						
+						if(element.find('a').attr('target')) {
+							window.open(element.find('a').attr('href'), '_blank');
+						} else {
+							window.location.href = element.find('a').attr('href');
+						}
 					}, duration)
 				});
 			}

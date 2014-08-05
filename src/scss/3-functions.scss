@@ -27,3 +27,7 @@ $zIndex: (
 	display: table;
 	clear: both;
 }
+
+@mixin shadow() {
+	box-shadow: 0 2px 5px rgba(#000, 0.26);
+}

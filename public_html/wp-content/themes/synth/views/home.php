@@ -2,26 +2,17 @@
 	/* Template Name: Homepage */ 
 	global $post;
 	$catSlug = 'works';
-	
-
-	
-
-	
-	$contactUs = get_posts(array(
-		'name'=>'contact-us',
-		'post_type'=>'page',
-		'post_status'=>'publish',
-		'posts_per_page'=>1
-	));
 ?> 
 
 <?php get_header(); ?>
 
-	<!-- COVER IMAGE (Static) -->
-	<div id="cover">
+	<!-- COVER IMAGE (Homepage PAGE) -->
+	<?php while(have_posts()): the_post(); ?>
+	<div id="cover" data-bg-src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>">
 		<!-- <img class="logo" src=""/> -->
 		<div class="tagline"><?php echo get_bloginfo('description', 'display');?></div>
 	</div>
+	<?php endwhile;?>
 
 	<!-- ABOUT US (PAGE) -->
 	<?php
@@ -74,13 +65,14 @@
 			'category'=>get_category_by_slug($catSlug)->term_id)
 	);
 	$workClass = array('full', 'small', 'full', 'full', 'small', 'thin', 'thin', 'wide', 'thin', 'wide');
+	$workHoverClass = array('top', 'right', 'bottom', 'left');
 	?>
 	<div id="our-work">
 		<h2 class="title">Our Work</h2>
 		<div data-packery>
 			<?php //if($works) foreach($works as $key=>$post): setup_postdata($post);?>
 			<?php while($works->have_posts()): $works->the_post();?>
-			<a href="<?php the_permalink();?>" class="work <?php echo $workClass[$works->current_post];?>" data-in-view="inView($inview, $element, false)">
+			<a href="<?php the_permalink();?>" class="work <?php echo $workClass[$works->current_post].' '.$workHoverClass[array_rand($workHoverClass, 1)];?>" data-in-view="inView($inview, $element, false)">
 				<h3 class="title"><?php the_title();?></h3>
 				<?php the_post_thumbnail('medium', array('class'=>'thumbnail'));?>
 			</a>
@@ -90,12 +82,18 @@
 	
 	<!-- CONTACT US -->
 	<?php
-	if($contactUs):
-		$contactUs = $contactUs[0];			
+	$contactUs = new WP_Query(
+		array(
+			'name'=>'contact-us',
+			'post_type'=>'page',
+			'post_status'=>'publish',
+			'posts_per_page'=>1)
+	);
+	
+	while($contactUs->have_posts()): $contactUs->the_post();
 	?>
-		<contact-us title="<?php the_field('title', $contactUs->ID);?>" content="<?php the_field('content', $contactUs->ID);?>" link="<?php the_field('click-thru', $contactUs->ID);?>" link-content="<?php the_field('link', $contactUs->ID);?>" in-view="inView($inview, $element, true)"></contact-us>
-	<?php endif;?>
+		<contact-us title="<?php the_field('title');?>" content="<?php the_field('content');?>" link="<?php the_field('click-thru');?>" link-content="<?php the_field('link');?>" in-view="inView($inview, $element, true)"></contact-us>
+	<?php endwhile;?>
 	
 
 <?php get_footer(); ?>
-

@@ -28215,7 +28215,12 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular
 				
 					$timeout(function() {
 						element.find('svg').remove('svg');
-						window.location.href = element.find('a').attr('href');
+						
+						if(element.find('a').attr('target')) {
+							window.open(element.find('a').attr('href'), '_blank');
+						} else {
+							window.location.href = element.find('a').attr('href');
+						}
 					}, duration)
 				});
 			}
@@ -28268,13 +28273,27 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular
 				inView: '@'
 			}
 		}
-	});
-/*
-<our-work class="work" link="<?php the_permalink();?>">
-				<h3 class="title"><?php the_title();?></h3>
-				<?php the_post_thumbnail('medium', array('class'=>'thumbnail'));?>
-			</our-work>
-*/;angular.module('synthApp').run(['$templateCache', function($templateCache) {
+	})
+	.directive('ourWork', function() {
+		/**
+		* Randomizes "Our Work" layout and hover effects
+		*/
+		return {
+			restrict: 'A',
+			compile: function(element, attrs) {
+				/*
+						$workClass = array('full', 'small', 'full', 'full', 'small', 'thin', 'thin', 'wide', 'thin', 'wide');
+	$workHoverClass = array('top', 'right', 'bottom', 'left');
+				*/
+				
+				var workClass 		= ['full', 'small', 'full', 'full', 'small', 'thin', 'thin', 'wide', 'thin', 'wide'],
+					workHoverClass	= ['top', 'right', 'bottom', 'left'];
+				
+			}
+		}
+	})	
+;
+;angular.module('synthApp').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('contact-us.html',
