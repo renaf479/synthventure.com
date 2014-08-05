@@ -1,4 +1,18 @@
 @font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Roboto';
   src: url("../fonts/Roboto-Thin.ttf");
 }
@@ -30,7 +44,7 @@ body {
   margin: 0;
   position: relative;
   background-color: #f9f9f9;
-  color: #212121;
+  color: #6d727c;
 }
 
 a {
@@ -2187,8 +2201,7 @@ body.home #our-work .work.wide:after {
   color: white;
   text-decoration: none;
   font-size: 1.2em;
-  font-family: 'Telavision';
-  font-weight: bold;
+  font-family: 'Lato';
   letter-spacing: 2px;
   height: 44.8px;
   line-height: 44.8px;
@@ -2197,6 +2210,7 @@ body.home #our-work .work.wide:after {
 #nav.ui-scrollfix {
   background-color: #f9f9f9;
   border-bottom: 1px solid rgba(57, 61, 66, 0.12);
+  font-weight: normal;
   height: 64px;
   line-height: 64px;
 }
@@ -2206,7 +2220,7 @@ body.home #our-work .work.wide:after {
 }
 
 #nav.ui-scrollfix a {
-  color: #212121;
+  color: #6d727c;
 }
 
 #nav .container,
