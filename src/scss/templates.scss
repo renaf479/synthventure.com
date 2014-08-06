@@ -12,7 +12,7 @@
 	color: $textColorPrimaryInverse;
 	
 	&.active {
-		min-height: $gridUnit * 25;
+		height: auto;
 		padding: $gridUnit * 3;
 	}
 	
