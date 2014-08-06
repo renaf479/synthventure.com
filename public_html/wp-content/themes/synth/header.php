@@ -17,18 +17,21 @@
     <body <?php body_class(); ?> data-ng-controller="synthCtrl">
     	<nav id="nav" data-ui-scrollfix="+10">
     		<div class="container">
-			<?php 
-				wp_nav_menu(array(
-					'container'=>false,
-					'theme_location' => 'top'
-					)
-				);
-				
-				wp_nav_menu(array(
-					'container'=>false,
-					'theme_location' => 'top-right'
-					)
-				);
-			?>
+    			<a href="" class="home">
+    				<synth-logo></synth-logo>
+    			</a>
+				<?php 
+					wp_nav_menu(array(
+						'container'=>false,
+						'theme_location' => 'top'
+						)
+					);
+					
+					wp_nav_menu(array(
+						'container'=>false,
+						'theme_location' => 'top-right'
+						)
+					);
+				?>
     		</div>
 		</nav>

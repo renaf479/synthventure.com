@@ -109,6 +109,7 @@ body.home #our-work,
 body.home #our-work .work,
 body.home #our-work .work:after,
 #nav,
+#nav .home,
 #nav .menu li a,
 #contact-us,
 #contact-us .link {
@@ -141,6 +142,11 @@ body.single #footer .content {
   width: inherit;
   border-top: 1px solid rgba(57, 61, 66, 0.12);
   padding-top: 8px;
+}
+
+#footer .synth-logo {
+  width: 200px;
+  fill: #fa8b08;
 }
 
 
@@ -2230,8 +2236,8 @@ body.home #our-work .work.wide:after {
   font-family: 'Lato';
   letter-spacing: 2px;
   overflow: hidden;
-  height: 44.8px;
-  line-height: 44.8px;
+  height: 64px;
+  line-height: 64px;
 }
 
 #nav .container,
@@ -2240,12 +2246,38 @@ body.home #nav #our-work,
 #nav body.single .content,
 body.single #nav .content {
   width: 1200px;
+  height: 100%;
+}
+
+#nav .home {
+  background-color: #fa8b08;
+  width: 64px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+#nav .home .synth-logo {
+  position: absolute;
+  height: 48px;
+  fill: white;
+  top: 7px;
+  left: 15px;
+}
+
+#nav .home .synth-logo g.s > path {
+  display: block;
+}
+
+#nav .home .synth-logo path {
+  display: none;
 }
 
 #nav .menu {
   float: left;
   width: 600px;
-  height: inherit;
+  height: 100%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -2275,9 +2307,32 @@ body.single #nav .content {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
+#nav.ui-scrollfix .home {
+  -webkit-transition-duration: .55s;
+  transition-duration: .55s;
+  background-color: transparent;
+  width: 150px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+#nav.ui-scrollfix .home .synth-logo {
+  position: absolute;
+  height: 33px;
+  fill: #fa8b08;
+  top: 15px;
+  left: 15px;
+}
+
+#nav.ui-scrollfix .home .synth-logo path {
+  display: block;
+}
+
 #nav.ui-scrollfix .menu li {
   border-color: rgba(57, 61, 66, 0.12);
-  border-width: 0 1px 0 0;
+  border-width: 0 0 0 1px;
   border-style: solid;
 }
 
@@ -2361,7 +2416,7 @@ body.single .content .article-overlay img.size-full {
 }
 
 #contact-us.active {
-  min-height: 200px;
+  height: auto;
   padding: 24px;
 }
 

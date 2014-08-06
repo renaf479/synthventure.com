@@ -95,6 +95,7 @@ body.home {
 	#our-services {
 		height: 60%;
 		min-height: 600px;
+		
 		.wrapper {
 			color: $textColorPrimaryInverse;
 			z-index: map-get($zIndex, content);

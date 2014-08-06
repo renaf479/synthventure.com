@@ -13,16 +13,44 @@
 	letter-spacing: 2px;
 	overflow: hidden;
 
-	@include height($navHeight*.7);
+	@include height($navHeight);
 	
 	.container {
 		width: $navWidth;
+		height: 100%;
+	}
+	
+	.home {
+		@extend .transition;
+		
+		background-color: $colorPrimary;
+		width: $navHeight;
+		height: 100%;
+		float: left;
+		overflow: hidden;
+		position: relative;
+		
+		.synth-logo {
+			position: absolute;
+			height: $gridUnit * 6;
+			fill: $textColorPrimaryInverse;
+			top: 7px;
+			left: 15px;
+			
+			g.s > path {
+				display: block;
+			}
+			
+			path {
+				display: none;
+			}
+		}	
 	}
 	
 	.menu {
 		float: left;
 		width: $navWidth/2;
-		height: inherit;
+		height: 100%;
 		margin: 0 auto;
 		padding: 0;
 		list-style: none;
@@ -52,10 +80,35 @@
 		
 		@include height($navHeight);
 		@include shadow();
+		
+		.home {
+			transition-duration: .55s;
+			background-color: transparent;
+			width: 150px;
+			height: 100%;
+			float: left;
+			overflow: hidden;
+			position: relative;
+			
+			.synth-logo {
+				position: absolute;
+				height: 33px;
+				fill: $colorPrimary;
+				top: 15px;
+				left: 15px;
+				
+				path {
+					display: block;
+				}
+			}	
+		}
+		
+		
+		
 		.menu {
 			li {
 				border-color: $windowBorder;
-				border-width: 0 1px 0 0;
+				border-width: 0 0 0 1px;
 				border-style: solid;
 				
 				a {
