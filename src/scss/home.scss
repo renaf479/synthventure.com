@@ -2,7 +2,6 @@ body.home {
 	.title {
 		font-size: 2.7em;
 		text-align: center;
-		padding: $gridUnit*2 0;
 	}
 
 	#cover {
@@ -28,19 +27,27 @@ body.home {
 			opacity: .7;
 		}
 
-		.logo {
+		.wrapper {
+			@extend .container;
+		
+			position: absolute;
+			
+			text-align: center;
+			z-index: map-get($zIndex, content);
+			
+			@include containerMiddle();
+		}
+		
+		.synth-logo {
+			width: 40%;
+			fill: $textColorPrimaryInverse;
+			margin-bottom: $gridUnit * 4;
 		}
 		
 		.tagline {
-			position: absolute;
-			z-index: map-get($zIndex, content);
 			color: $textColorPrimaryInverse;
-			font-size: 4em;
+			font-size: 2em;
 			width: 100%;
-			text-align: center;
-			top: 50%;
-			transform: translate(0, -50%);
-			
 		}
 	}
 	
@@ -78,7 +85,16 @@ body.home {
 		
 		.left {
 			background-color: $colorPrimary;
-			font-size: 4em;
+			font-size: 4.5em;
+			font-weight: bold;
+			word-spacing: 1000px;
+			color: $textColorPrimaryInverse;
+			
+			.wrapper {
+				position: absolute;
+				
+				@include containerMiddle();
+			}
 		}
 		
 		.right {
@@ -97,8 +113,16 @@ body.home {
 		min-height: 600px;
 		
 		.wrapper {
+			@extend .container;
+			
 			color: $textColorPrimaryInverse;
 			z-index: map-get($zIndex, content);
+			
+			.title {
+				text-align: center;
+			}
+			
+			@include containerMiddle();
 		}
 		
 		&:after {

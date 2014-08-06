@@ -26,6 +26,7 @@
 		background-color: $colorPrimary;
 		width: $navHeight;
 		height: 100%;
+		margin-right: $gridUnit * 2;
 		float: left;
 		overflow: hidden;
 		position: relative;
@@ -49,7 +50,6 @@
 	
 	.menu {
 		float: left;
-		width: $navWidth/2;
 		height: 100%;
 		margin: 0 auto;
 		padding: 0;
@@ -86,6 +86,7 @@
 			background-color: transparent;
 			width: 150px;
 			height: 100%;
+			margin-right: 0;
 			float: left;
 			overflow: hidden;
 			position: relative;
@@ -129,14 +130,16 @@
 	}
 	
 	#menu-social {
+		float: right;
 		letter-spacing: normal;
 		
 		li {
 			font-size: 0px;
-			float: right;
+			display: inline-block;
+			vertical-align: top;
 			
 			&:last-of-type {
-				border-width: 0 1px;
+				border-width: 0 1px 0;
 			}
 
 			&.facebook {

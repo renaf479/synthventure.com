@@ -9,8 +9,10 @@
 	<!-- COVER IMAGE (Homepage PAGE) -->
 	<?php while(have_posts()): the_post(); ?>
 	<div id="cover" data-bg-src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>">
-		<!-- <img class="logo" src=""/> -->
-		<div class="tagline"><?php echo get_bloginfo('description', 'display');?></div>
+		<div class="wrapper">
+			<synth-logo></synth-logo>
+			<div class="tagline"><?php echo get_bloginfo('description', 'display');?></div>
+		</div>
 	</div>
 	<?php endwhile;?>
 
@@ -27,7 +29,9 @@
 	while($aboutUs->have_posts()): $aboutUs->the_post(); ?>
 	<div id="about-us">
 		<div class="left">
-			<?php echo get_bloginfo('description', 'display');?>
+			<div class="wrapper">
+				<?php echo get_bloginfo('description', 'display');?>
+			</div>
 		</div>
 		<div class="right">
 			<div class="wrapper">

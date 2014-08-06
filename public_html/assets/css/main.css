@@ -75,6 +75,8 @@ img.size-medium {
 }
 
 .container,
+body.home #cover .wrapper,
+body.home #our-services .wrapper,
 body.home #our-work,
 body.single .content {
   width: 1000px;
@@ -126,6 +128,10 @@ body.home #our-work .work:after,
 }
 
 #footer .container,
+#footer body.home #cover .wrapper,
+body.home #cover #footer .wrapper,
+#footer body.home #our-services .wrapper,
+body.home #our-services #footer .wrapper,
 #footer body.home #our-work,
 body.home #footer #our-work,
 #footer body.single .content,
@@ -154,7 +160,6 @@ body.single #footer .content {
 body.home .title {
   font-size: 2.7em;
   text-align: center;
-  padding: 16px 0;
 }
 
 body.home #cover {
@@ -181,17 +186,27 @@ body.home #cover:after {
   opacity: .7;
 }
 
-body.home #cover .tagline {
+body.home #cover .wrapper {
   position: absolute;
-  z-index: 800;
-  color: white;
-  font-size: 4em;
-  width: 100%;
   text-align: center;
+  z-index: 800;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body.home #cover .synth-logo {
+  width: 40%;
+  fill: white;
+  margin-bottom: 32px;
+}
+
+body.home #cover .tagline {
+  color: white;
+  font-size: 2em;
+  width: 100%;
 }
 
 body.home #about-us,
@@ -226,7 +241,19 @@ body.home #about-us .right {
 
 body.home #about-us .left {
   background-color: #fa8b08;
-  font-size: 4em;
+  font-size: 4.5em;
+  font-weight: bold;
+  word-spacing: 1000px;
+  color: white;
+}
+
+body.home #about-us .left .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 body.home #about-us .right .wrapper {
@@ -251,6 +278,15 @@ body.home #our-services {
 body.home #our-services .wrapper {
   color: white;
   z-index: 800;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body.home #our-services .wrapper .title {
+  text-align: center;
 }
 
 body.home #our-services:after {
@@ -2241,6 +2277,10 @@ body.home #our-work .work.wide:after {
 }
 
 #nav .container,
+#nav body.home #cover .wrapper,
+body.home #cover #nav .wrapper,
+#nav body.home #our-services .wrapper,
+body.home #our-services #nav .wrapper,
 #nav body.home #our-work,
 body.home #nav #our-work,
 #nav body.single .content,
@@ -2253,6 +2293,7 @@ body.single #nav .content {
   background-color: #fa8b08;
   width: 64px;
   height: 100%;
+  margin-right: 16px;
   float: left;
   overflow: hidden;
   position: relative;
@@ -2276,7 +2317,6 @@ body.single #nav .content {
 
 #nav .menu {
   float: left;
-  width: 600px;
   height: 100%;
   margin: 0 auto;
   padding: 0;
@@ -2313,6 +2353,7 @@ body.single #nav .content {
   background-color: transparent;
   width: 150px;
   height: 100%;
+  margin-right: 0;
   float: left;
   overflow: hidden;
   position: relative;
@@ -2351,16 +2392,18 @@ body.single #nav .content {
 }
 
 #nav #menu-social {
+  float: right;
   letter-spacing: normal;
 }
 
 #nav #menu-social li {
   font-size: 0px;
-  float: right;
+  display: inline-block;
+  vertical-align: top;
 }
 
 #nav #menu-social li:last-of-type {
-  border-width: 0 1px;
+  border-width: 0 1px 0;
 }
 
 body.single .featured-image {
