@@ -1,0 +1,53 @@
+body.home {
+	#about-us {
+		@extend .transition;
+		
+		height: 40%;
+		min-height: 400px;
+		
+		opacity: 0;
+		
+		.left,
+		.right {
+			width: 50%;
+			height: 100%;
+			float: left;
+			text-align: center;
+			position: relative;
+		}
+		
+		.left {
+			background-color: $colorPrimary;
+			font-size: 4.5em;
+			font-weight: bold;
+			word-spacing: 1000px;
+			color: $textColorPrimaryInverse;
+			
+			.wrapper {
+				position: absolute;
+				
+				@include containerMiddle();
+			}
+		}
+		
+		.right {
+			.wrapper {
+				@include containerMiddle();
+			}
+		}
+		
+		.right:after {
+			@include pseudoClear();
+		}
+		
+		&.active {
+			opacity: 1;
+			
+			.left {
+			}
+			
+			.wrapper {
+			}
+		}
+	}
+}

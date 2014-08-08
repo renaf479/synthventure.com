@@ -2,7 +2,8 @@ $gridUnit: 8px;
 
 $containerWidth: 1000px;
 
-$navHeight: $gridUnit * 8;
+$navHeightInitial: $gridUnit * 5;
+$navHeight: $gridUnit * 7;
 $navWidth: $gridUnit * 150;
 
 
@@ -21,3 +22,10 @@ $textColorPrimaryInverse: #fff;
 $windowBackground: #f9f9f9;
 $windowBlack: #393D42;
 $windowBorder: rgba($windowBlack, .12);
+
+
+/**
+* Layout
+*/
+
+$footerHeight: $gridUnit * 20;

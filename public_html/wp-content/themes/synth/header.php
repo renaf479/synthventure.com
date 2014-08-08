@@ -17,7 +17,7 @@
     <body <?php body_class(); ?> data-ng-controller="synthCtrl">
     	<nav id="nav" data-ui-scrollfix="+10">
     		<div class="container">
-    			<a href="" class="home">
+    			<a href="/" class="home">
     				<synth-logo></synth-logo>
     			</a>
 				<?php 

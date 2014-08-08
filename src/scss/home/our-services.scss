@@ -1,0 +1,27 @@
+body.home {
+	#our-services {
+		height: 60%;
+		min-height: 600px;
+		
+		.wrapper {
+			@extend .container;
+			
+			color: $textColorPrimaryInverse;
+			z-index: map-get($zIndex, content);
+			
+			.title {
+				text-align: center;
+			}
+			
+			@include containerMiddle();
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#000, .8);
+		}
+	}	
+}

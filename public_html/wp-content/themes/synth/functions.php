@@ -15,10 +15,10 @@
 			array(
 				'name' => 'Footer',
 				'id' => 'footer',
-				'before_widget' => '',
-				'after_widget' => '',
-				'before_title' => '',
-				'after_title' => '',
+				'before_widget' => '<div class="widget %2$s" id="%1$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h4 class="title">',
+				'after_title' => '</h4>',
 			)
 		);
 	}

@@ -28122,8 +28122,10 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular
 							className 	= (className)? className: 'active';
 						if(inview) {
 							element.addClass(className);
+							angular.element(document.body).addClass(element.attr('id')+'-body');
 						} else if(!inview && hide) {
 							element.removeClass(className);
+							angular.element(document.body).removeClass(element.attr('id')+'-body');
 						}							
 					}
 				}

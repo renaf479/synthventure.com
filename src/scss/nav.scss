@@ -13,7 +13,7 @@
 	letter-spacing: 2px;
 	overflow: hidden;
 
-	@include height($navHeight);
+	@include height($navHeightInitial);
 	
 	.container {
 		width: $navWidth;
@@ -24,19 +24,23 @@
 		@extend .transition;
 		
 		background-color: $colorPrimary;
-		width: $navHeight;
+		width: $navHeightInitial;
 		height: 100%;
-		margin-right: $gridUnit * 2;
+		margin-right: $gridUnit;
 		float: left;
 		overflow: hidden;
 		position: relative;
 		
 		.synth-logo {
+			@extend .transition;
+		
 			position: absolute;
-			height: $gridUnit * 6;
+			height: $navHeightInitial*.8;
 			fill: $textColorPrimaryInverse;
-			top: 7px;
-			left: 15px;
+			top: 50%;
+			transform: translate(0, -50%);
+			/* top: 4px; */
+			left: 8px;
 			
 			g.s > path {
 				display: block;
@@ -95,7 +99,7 @@
 				position: absolute;
 				height: 33px;
 				fill: $colorPrimary;
-				top: 15px;
+/* 				top: 11px; */
 				left: 15px;
 				
 				path {
@@ -103,8 +107,6 @@
 				}
 			}	
 		}
-		
-		
 		
 		.menu {
 			li {

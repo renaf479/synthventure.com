@@ -8,21 +8,24 @@
 	
 	$footer = $footer[0];	
 ?>
-	<footer id="footer">
-		<div class="container">
-			<?php wp_footer(); ?>
-			
-			
-			
-			<?php if ( is_active_sidebar('footer') ) : ?>
+	<!-- CONTACT US -->
+	<?php include('views/contact-us.php');?>
+	
+		<footer id="footer">
+			<div class="container">
+				<?php wp_footer(); ?>
 				<?php dynamic_sidebar('footer'); ?>
-			<?php endif; ?>
-			
-			<div class="copyright"><?php the_field('copyright', $footer->ID);?></div>
-			
-			<synth-logo></synth-logo>
-
-		</div>
-	</footer>
+				
+				
+				<div class="copyright">
+					<div class="content">
+						<?php the_field('copyright', $footer->ID);?>
+					</div>
+					<a href="/">
+						<synth-logo></synth-logo>
+					</a>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>

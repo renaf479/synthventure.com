@@ -2,28 +2,61 @@
 	@extend .transition;
 
 	width: 100%;
-	height: 200px;
+	height: $footerHeight;
 	position: relative;
 	background-color: $windowBlack;
 	color: $textColorPrimaryInverse;
 	
 	.container {
+		@extend .container;
 		padding: $gridUnit *2;
 		height: inherit;
 	}
 	
-	.copyright {
-		font-size: .8em;
-		color: rgba($textColorPrimaryInverse, .4);
-		position: absolute;
-		bottom: $gridUnit * 3;
-		width: inherit;
-		border-top: 1px solid $windowBorder;
-		padding-top: $gridUnit;
+	.twitter {
+		.title {
+			display: none;
+		}
 	}
 	
+	
+	
+	
+/*
+	.copyright,
 	.synth-logo {
-		width: 200px;
-		fill: $colorPrimary;
+		
+		@include height($gridUnit * 4);
+		bottom: $gridUnit * 3;
+		padding: $gridUnit $gridUnit*2;
+	}
+*/
+	.copyright {
+		position: absolute;
+		border-top: 1px solid rgba($textColorPrimaryInverse, .4);
+		bottom: 0;
+		padding: $gridUnit 0 $gridUnit*2;
+		width: 100%;
+		
+		
+		.content,
+		.synth-logo {
+			height: $gridUnit * 3;
+		}
+		
+		.content {
+			font-size: .8em;
+			color: rgba($textColorPrimaryInverse, .4);
+			display: table-cell;
+			vertical-align: bottom;
+		}
+		
+		.synth-logo {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translate(0, -50%);
+			fill: $colorPrimary;
+		}
 	}
 }
