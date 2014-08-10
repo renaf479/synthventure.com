@@ -2,51 +2,72 @@
 	@extend .transition;
 
 	width: 100%;
-	height: $footerHeight;
+	min-height: $footerHeight;
 	position: relative;
 	background-color: $windowBlack;
-	color: $textColorPrimaryInverse;
+	color: rgba($textColorPrimaryInverse, .4);
 	
 	.container {
 		@extend .container;
 		padding: $gridUnit *2;
-		height: inherit;
+		width: $navWidth;
+		height: inherit;		
 	}
 	
-	.twitter {
-		.title {
-			display: none;
+	.social {
+		padding-bottom: $gridUnit;
+		&:after {
+			@include pseudoClear();
 		}
 	}
 	
-	
-	
-	
-/*
-	.copyright,
-	.synth-logo {
+	.menu-social-container {
 		
-		@include height($gridUnit * 4);
-		bottom: $gridUnit * 3;
-		padding: $gridUnit $gridUnit*2;
-	}
+		.title {
+			font-size: 1.2em;
+			text-align: left;
+		}
+		
+/*
+		.synth-logo {
+			padding: 0 $gridUnit;
+			height: 1.2em;
+			fill: $colorPrimary;
+		}
 */
+		
+		.menu {
+			padding: 0;
+			margin: 0;
+						
+			.menu-item {
+				display: block;
+				padding: $gridUnit/2 0;
+				font-size: .9em;
+				
+				a:before {
+					font-size: 16px;
+					margin-right: $gridUnit;
+				}
+			}
+		}
+	}
+	
 	.copyright {
-		position: absolute;
+		font-size: .8em;
 		border-top: 1px solid rgba($textColorPrimaryInverse, .4);
-		bottom: 0;
-		padding: $gridUnit 0 $gridUnit*2;
+		padding: $gridUnit 0 0;
 		width: 100%;
 		
 		
+/*
 		.content,
 		.synth-logo {
 			height: $gridUnit * 3;
 		}
 		
 		.content {
-			font-size: .8em;
-			color: rgba($textColorPrimaryInverse, .4);
+			
 			display: table-cell;
 			vertical-align: bottom;
 		}
@@ -58,5 +79,6 @@
 			transform: translate(0, -50%);
 			fill: $colorPrimary;
 		}
+*/
 	}
 }

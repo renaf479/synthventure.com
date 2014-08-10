@@ -14,16 +14,23 @@
 		<footer id="footer">
 			<div class="container">
 				<?php wp_footer(); ?>
-				<?php dynamic_sidebar('footer'); ?>
+				<?php //dynamic_sidebar('footer'); ?>
 				
-				
+				<div class="social">
+					<?php
+						wp_nav_menu(array(
+							'theme_location' => 'social'
+							)
+						);
+					?>
+				</div>
 				<div class="copyright">
-					<div class="content">
-						<?php the_field('copyright', $footer->ID);?>
-					</div>
-					<a href="/">
+					<?php the_field('copyright', $footer->ID);?>
+					<!--
+<a href="/">
 						<synth-logo></synth-logo>
 					</a>
+-->
 				</div>
 			</div>
 		</footer>

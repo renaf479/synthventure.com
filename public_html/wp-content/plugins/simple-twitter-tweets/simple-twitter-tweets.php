@@ -532,9 +532,12 @@ class PI_SimpleTwitterTweets extends WP_Widget{
 								}else{
 									$timeDisplay = human_time_diff($t['time'], current_time('timestamp'));
 								}
+								
 								// Ago - to show?
 								if($timeAgo == "true"){
 									$displayAgo = " ago";
+								} else {
+									$displayAgo = '';
 								}
 								// Use to make il8n compliant
 								printf(__('%1$s%2$s'), $timeDisplay, $displayAgo);

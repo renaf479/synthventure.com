@@ -15,7 +15,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?> data-ng-controller="synthCtrl">
-    	<nav id="nav" data-ui-scrollfix="8">
+    	<nav id="nav" data-ui-scrollfix="100">
     		<div class="container">
     			<a href="/" class="home">
     				<synth-logo></synth-logo>
@@ -29,7 +29,7 @@
 					
 					wp_nav_menu(array(
 						'container'=>false,
-						'theme_location' => 'top-right'
+						'theme_location' => 'social'
 						)
 					);
 				?>

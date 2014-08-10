@@ -127,6 +127,10 @@
 						background-color: rgba($textColorPrimary, .05);
 					}
 				}
+				
+				&:last-of-type {
+					border-width: 0 1px 0;
+				}
 			}
 		}
 	}
@@ -134,37 +138,6 @@
 	#menu-social {
 		float: right;
 		letter-spacing: normal;
-		
-		li {
-			font-size: 0px;
-			display: inline-block;
-			vertical-align: top;
-			
-			&:last-of-type {
-				border-width: 0 1px 0;
-			}
-
-			&.facebook {
-				a {
-					@extend .icon-facebook;
-				}
-			}
-				
-			&.twitter {
-				a {
-					@extend .icon-twitter;
-				}
-			}
-			
-			&.instagram {
-				a {
-					@extend .icon-instagram;
-				}
-			} 
-			
-			a:before {
-				@extend .icon;
-			}
-		}
+		font-size: 0px;
 	}
 }

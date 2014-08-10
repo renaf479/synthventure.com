@@ -13,9 +13,18 @@ body.home {
 			height: 100%;
 			position: absolute;
 			text-align: center;
+			
+			.wrapper {
+				position: absolute;
+				@include containerMiddle();
+			}
 		}
 		
 		.left {
+			right: 25%;
+		}
+		
+		.right {
 			width: 100%;
 			background-color: $colorPrimary;
 			color: $textColorPrimaryInverse;
@@ -26,10 +35,7 @@ body.home {
 			@include shadow('right');
 			
 			.wrapper {
-				position: absolute;
-				
-				@include containerMiddle();
-				
+			
 				.synth-logo {
 					height: $gridUnit * 10;
 					display: block;
@@ -42,27 +48,18 @@ body.home {
 			}
 		}
 		
-		.right {
-			right: 25%;
-			
-			.wrapper {
-				@include containerMiddle();
-			}
-			
-		}
-		
 		&.active {
 			.left {
-				width: 50%;
 				left: 0;
+			}
+			
+			.right {
+				width: 50%;
+				right: 0;
 				
 				&:after {
 					background-size: 100% 100%;
 				}
-			}
-			
-			.right {
-				right: 0;
 			}
 		}
 	}

@@ -23,7 +23,7 @@ $zIndex: (
 }
 
 @mixin pseudoClear() {
-	content: '';
+	content: ' ';
 	display: table;
 	clear: both;
 }

@@ -5,7 +5,7 @@
 		
 		//Registers Nav
 		register_nav_menu('top', 'Nav');
-		register_nav_menu('top-right', 'Social');
+		register_nav_menu('social', 'Social');
 	}
 	add_action('after_setup_theme', 'synth_setup');
 	
