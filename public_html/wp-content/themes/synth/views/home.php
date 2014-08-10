@@ -9,10 +9,11 @@
 	<!-- COVER IMAGE (Homepage PAGE) -->
 	<?php while(have_posts()): the_post(); ?>
 	<div id="cover" data-bg-src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>">
+<!--
 		<div class="wrapper">
 			<synth-logo></synth-logo>
 		</div>
-		<!-- <img /> -->
+-->
 	</div>
 	<?php endwhile;?>
 

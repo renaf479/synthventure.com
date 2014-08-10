@@ -107,6 +107,21 @@ synthApp
 			}
 		}
 	})
+	.directive('synthButton', function() {
+		/**
+		* Creates link button
+		*/
+		return {
+			restrict: 'E',
+			transclude: true,
+			templateUrl: 'synth-button.html',
+			replace: true,
+			scope: {
+				link: '@',
+				linkContent: '@'
+			}
+		}
+	})
 	.directive('synthCircle', function($timeout) {
 		/**
 		* Ripple button click effect
@@ -127,7 +142,7 @@ synthApp
 		return {
 			restrict: 'C',
 			link: function(scope, element, attrs) {
-				var duration = 250;
+				var duration = 200;
 				
 				element.bind('click', function(e) {
 					e.preventDefault();

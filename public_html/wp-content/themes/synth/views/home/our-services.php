@@ -10,7 +10,7 @@ while($services->have_posts()): $services->the_post();
 ?>
 <div id="our-services" data-bg-src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>">
 	<div class="wrapper">
-		<h2 class="title"><?php the_title();?></h2>
+		<h2 class="title"><?php the_field('title');?></h2>
 		<div class="content"><?php the_excerpt();?></div>
 	</div>
 </div>

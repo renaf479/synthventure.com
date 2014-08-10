@@ -15,7 +15,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?> data-ng-controller="synthCtrl">
-    	<nav id="nav" data-ui-scrollfix="+10">
+    	<nav id="nav" data-ui-scrollfix="8">
     		<div class="container">
     			<a href="/" class="home">
     				<synth-logo></synth-logo>

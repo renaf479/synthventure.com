@@ -3,50 +3,66 @@ body.home {
 		@extend .transition;
 		
 		height: 40%;
-		min-height: 400px;
-		
-		opacity: 0;
 		
 		.left,
 		.right {
+			@extend .transition;
+			transition-duration: .7s;
+			transition-delay: 1s;
 			width: 50%;
 			height: 100%;
-			float: left;
+			position: absolute;
 			text-align: center;
-			position: relative;
 		}
 		
 		.left {
+			width: 100%;
 			background-color: $colorPrimary;
-			font-size: 4.5em;
-			font-weight: bold;
-			word-spacing: 1000px;
 			color: $textColorPrimaryInverse;
+			fill: $textColorPrimaryInverse;
+			font-size: 1.5em;
+			z-index: map-get($zIndex, content);
+			
+			@include shadow('right');
 			
 			.wrapper {
 				position: absolute;
 				
 				@include containerMiddle();
+				
+				.synth-logo {
+					height: $gridUnit * 10;
+					display: block;
+					margin: $gridUnit;
+				}
+			}
+			
+			&:after {
+				@include waves(.6);
 			}
 		}
 		
 		.right {
+			right: 25%;
+			
 			.wrapper {
 				@include containerMiddle();
 			}
-		}
-		
-		.right:after {
-			@include pseudoClear();
+			
 		}
 		
 		&.active {
-			opacity: 1;
-			
 			.left {
+				width: 50%;
+				left: 0;
+				
+				&:after {
+					background-size: 100% 100%;
+				}
 			}
 			
-			.wrapper {
+			.right {
+				right: 0;
 			}
 		}
 	}

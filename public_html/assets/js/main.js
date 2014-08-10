@@ -28071,7 +28071,7 @@ angular.module('ui.scrollfix',[]).directive('uiScrollfix', ['$window', function 
   };
 }]);
 ;// initialize the app
-var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular-inview']);;synthApp
+var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular-inview', 'duScroll']);;synthApp
 	.controller('synthCtrl', function($scope) {
 		
 	});;synthApp
@@ -28183,6 +28183,21 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular
 			}
 		}
 	})
+	.directive('synthButton', function() {
+		/**
+		* Creates link button
+		*/
+		return {
+			restrict: 'E',
+			transclude: true,
+			templateUrl: 'synth-button.html',
+			replace: true,
+			scope: {
+				link: '@',
+				linkContent: '@'
+			}
+		}
+	})
 	.directive('synthCircle', function($timeout) {
 		/**
 		* Ripple button click effect
@@ -28203,7 +28218,7 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular
 		return {
 			restrict: 'C',
 			link: function(scope, element, attrs) {
-				var duration = 250;
+				var duration = 200;
 				
 				element.bind('click', function(e) {
 					e.preventDefault();
@@ -28300,6 +28315,11 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular
 
   $templateCache.put('contact-us.html',
     "<div id=contact-us><div class=container><h3 class=title>{{title}}</h3><div class=content>{{content}}</div><div class=\"link synth-circle\"><a href={{link}}>{{linkContent}}</a></div></div></div>"
+  );
+
+
+  $templateCache.put('synth-button.html',
+    "<div class=\"link synth-circle\"><a href={{link}}>{{linkContent}}</a></div>"
   );
 
 

@@ -9,5 +9,5 @@ $contactUs = new WP_Query(
 
 while($contactUs->have_posts()): $contactUs->the_post();
 ?>
-	<contact-us title="<?php the_field('title');?>" content="<?php the_field('content');?>" link="<?php the_field('click-thru');?>" link-content="<?php the_field('link');?>" in-view="inView($inview, $element, true)"></contact-us>
+	<contact-us title="<?php the_field('title');?>" content="<?php the_field('content');?>" link="<?php the_field('click-thru');?>" link-content="<?php the_field('link');?>" data-in-view="inView($inview, $element, true)"></contact-us>
 <?php endwhile;?>
