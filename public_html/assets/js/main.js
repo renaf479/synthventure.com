@@ -28310,11 +28310,45 @@ var synthApp = angular.module('synthApp', ['ngAnimate', 'ui.scrollfix', 'angular
 		}
 	})	
 ;
+;synthApp
+	.directive('synthServicesMenu', function() {	
+		/**
+		* Generates a custom sub-nav for Services
+		*/
+		return {
+			restrict: 'A',
+			replace: true,
+			transclude: true,
+			templateUrl: 'services-nav.html',
+			compile: function(element, attrs, transclude) {
+				return function(scope, tElement, tAttrs) {
+					transclude(scope, function(clone) {
+						//console.log(clone);
+						var menuItem = angular.element(clone).find('a');
+						
+						angular.element(menuItem).attr({
+							'href':'javascript:void(0)'
+							});
+						tElement.children().append(menuItem);
+						
+						//var image = angular.element(clone).find('img');
+						//tElement.append(image);
+					});	
+				}
+			}
+		}
+	})
+;
 ;angular.module('synthApp').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('contact-us.html',
     "<div id=contact-us><div class=container><h3 class=title>{{title}}</h3><div class=content>{{content}}</div><div class=\"link synth-circle\"><a href={{link}}>{{linkContent}}</a></div></div></div>"
+  );
+
+
+  $templateCache.put('services-nav.html',
+    "<nav class=subNav><div class=container></div></nav>"
   );
 
 

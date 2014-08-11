@@ -8,10 +8,11 @@ $services = new WP_Query(
 );
 while($services->have_posts()): $services->the_post();
 ?>
-<div id="our-services" data-bg-src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>">
+<div id="our-services" data-bg-src="<?php echo get_field('cover_image')['url'];?>">
 	<div class="wrapper">
 		<h2 class="title"><?php the_field('title');?></h2>
-		<div class="content"><?php the_excerpt();?></div>
+		<div class="content"><?php the_field('excerpt');?></div>
+		<synth-button link="<?php echo the_field('url');?>" link-content="<?php echo the_field('url_button_text');?>"></synth-button>
 	</div>
 </div>
 <?php endwhile;?>

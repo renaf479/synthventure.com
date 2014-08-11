@@ -6,6 +6,7 @@
 		//Registers Nav
 		register_nav_menu('top', 'Nav');
 		register_nav_menu('social', 'Social');
+		register_nav_menu('services', 'Services');
 	}
 	add_action('after_setup_theme', 'synth_setup');
 	

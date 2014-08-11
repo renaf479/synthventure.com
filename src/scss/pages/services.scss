@@ -1,0 +1,11 @@
+body.page-template-viewsservices-php {
+	padding-top: $navHeight;
+	
+	.subNav {
+		background-color: $colorPrimary;
+		color: $textColorPrimaryInverse;
+		fill: $textColorPrimaryInverse;
+		
+		@include height($navHeight + $gridUnit*2);
+	}
+}

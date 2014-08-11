@@ -15,7 +15,11 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?> data-ng-controller="synthCtrl">
-    	<nav id="nav" data-ui-scrollfix="100">
+    
+    	<?php 
+    		$navClass = (is_front_page())? ' data-ui-scrollfix="100"': ' class="ui-scrollfix"';
+    	?>
+    	<nav id="nav"<?php echo $navClass;?>>
     		<div class="container">
     			<a href="/" class="home">
     				<synth-logo></synth-logo>
