@@ -4,20 +4,27 @@
 ?> 
 
 <?php get_header(); ?>
-
-<?php
-	wp_nav_menu(
-		array(
-			'container'=>false,
-			'theme_location'=> 'services',
-			'items_wrap'=> '<ul id="%1$s" class="%2$s" synth-services-menu>%3$s</ul>',
-		)
-	);
-?>
-	<div class="container">
-		<?php while(have_posts()):the_post(); ?>
-			<?php the_title(); ?>
-		<?php endwhile; ?>
-	</div>
-
+	<?php while(have_posts()):the_post(); ?>
+		<!-- SUBNAV -->
+		<div class="subNav">
+			<?php
+			wp_nav_menu(
+				array(
+					'container'=>false,
+					'theme_location'=> 'services'
+				)
+			);
+			?>	
+		</div>
+		<h1 class="page-title"><?php the_title(); ?></h1>
+		
+		<div class="services synth-internal-page">
+			<div class="cover">
+				<?php the_post_thumbnail('full', array('class'=>'synth-img-cover'));?>
+			</div>
+			<div class="content">
+				<?php the_content(); ?>
+			</div>
+		</div>
+	<?php endwhile; ?>
 <?php get_footer(); ?>

@@ -6,11 +6,6 @@ angular.module('synthApp').run(['$templateCache', function($templateCache) {
   );
 
 
-  $templateCache.put('services-nav.html',
-    "<nav class=subNav><div class=container></div></nav>"
-  );
-
-
   $templateCache.put('synth-button.html',
     "<div class=\"link synth-circle\"><a href={{link}}>{{linkContent}}</a></div>"
   );

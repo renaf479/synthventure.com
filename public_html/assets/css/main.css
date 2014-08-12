@@ -77,9 +77,16 @@ img.size-medium {
 body.home #cover .wrapper,
 body.home #our-services .wrapper,
 body.home #our-work,
+.synth-internal-page .content,
+body.page-template-viewsservices-php .subNav .menu,
 body.single .content {
   width: 1000px;
   margin: 0 auto;
+  position: relative;
+}
+
+.cover {
+  overflow: hidden;
   position: relative;
 }
 
@@ -103,6 +110,12 @@ body.single .content {
 
 .synth-circle circle {
   fill: rgba(186, 104, 200, 0.1);
+}
+
+.synth-img-cover {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .title {
@@ -191,6 +204,10 @@ body.home #cover #footer .wrapper,
 body.home #our-services #footer .wrapper,
 #footer body.home #our-work,
 body.home #footer #our-work,
+#footer .synth-internal-page .content,
+.synth-internal-page #footer .content,
+#footer body.page-template-viewsservices-php .subNav .menu,
+body.page-template-viewsservices-php .subNav #footer .menu,
 #footer body.single .content,
 body.single #footer .content {
   padding: 16px;
@@ -282,6 +299,10 @@ body.home #cover #nav .wrapper,
 body.home #our-services #nav .wrapper,
 #nav body.home #our-work,
 body.home #nav #our-work,
+#nav .synth-internal-page .content,
+.synth-internal-page #nav .content,
+#nav body.page-template-viewsservices-php .subNav .menu,
+body.page-template-viewsservices-php .subNav #nav .menu,
 #nav body.single .content,
 body.single #nav .content {
   width: 1200px;
@@ -2563,16 +2584,58 @@ body.home #our-work .work:hover.right:after {
   content: '\e1c2';
 }
 
+.synth-internal-page {
+  position: relative;
+}
+
+.synth-internal-page .content {
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 800;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
 body.page-template-viewsservices-php {
   padding-top: 56px;
+}
+
+body.page-template-viewsservices-php .subNav,
+body.page-template-viewsservices-php .page-title {
+  height: 72px;
+  line-height: 72px;
 }
 
 body.page-template-viewsservices-php .subNav {
   background-color: #fa8b08;
   color: white;
   fill: white;
-  height: 72px;
-  line-height: 72px;
+}
+
+body.page-template-viewsservices-php .subNav .menu {
+  height: 100%;
+  padding: 0;
+}
+
+body.page-template-viewsservices-php .page-title {
+  text-align: center;
+  padding: 0;
+}
+
+body.page-template-viewsservices-php .services .cover {
+  height: 480px;
+}
+
+body.page-template-viewsservices-php .services .cover .synth-img-cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 body.single .featured-image {

@@ -1,11 +1,38 @@
 body.page-template-viewsservices-php {
 	padding-top: $navHeight;
 	
+	.subNav,
+	.page-title {
+		@include height($navHeight + $gridUnit*2);
+	}
+	
 	.subNav {
 		background-color: $colorPrimary;
 		color: $textColorPrimaryInverse;
 		fill: $textColorPrimaryInverse;
 		
-		@include height($navHeight + $gridUnit*2);
+		.menu {
+			@extend .container;
+			
+			height: 100%;
+			padding: 0;
+		}
+	}
+	
+	.page-title {
+		text-align: center;
+		padding: 0;
+	}
+	
+	.services {
+		.cover {
+			height: $gridUnit * 60;
+			
+			.synth-img-cover {
+				position: absolute;
+				
+				@include containerMiddle();
+			}
+		}
 	}
 }

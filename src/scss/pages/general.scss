@@ -1,0 +1,15 @@
+.synth-internal-page {
+	position: relative;
+	
+	.content {
+		@extend .container;
+		
+		background-color: $windowBackground;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		z-index: map-get($zIndex, content);
+		
+		transform: translate(-50%, 0);
+	}
+}

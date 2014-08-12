@@ -68,6 +68,11 @@ img {
 	position: relative;
 }
 
+.cover {
+	overflow: hidden;
+	position: relative;
+}
+
 .logo {
 	width: 100px;
 	fill: $colorPrimary;
@@ -88,6 +93,12 @@ img {
 	circle {
 		fill: rgba($colorPrimaryLight, .1);
 	}
+}
+
+.synth-img-cover {
+	position: relative;
+	width: 100%;
+	height: auto;
 }
 
 .title {
