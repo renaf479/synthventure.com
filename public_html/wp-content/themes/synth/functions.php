@@ -7,6 +7,7 @@
 		register_nav_menu('top', 'Nav');
 		register_nav_menu('social', 'Social');
 		register_nav_menu('services', 'Services');
+		register_nav_menu('footer', 'Footer');
 	}
 	add_action('after_setup_theme', 'synth_setup');
 	

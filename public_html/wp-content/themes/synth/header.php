@@ -17,9 +17,9 @@
     <body <?php body_class(); ?> data-ng-controller="synthCtrl">
     
     	<?php 
-    		$navClass = (is_front_page())? ' data-ui-scrollfix="100"': ' class="ui-scrollfix"';
+    		$navClass = (!is_front_page())? ' ui-scrollfix': '';
     	?>
-    	<nav id="nav"<?php echo $navClass;?>>
+    	<nav id="nav" class="sv-menu<?php echo $navClass;?>" data-ui-scrollfix="100">
     		<div class="container">
     			<a href="/" class="home">
     				<synth-logo></synth-logo>

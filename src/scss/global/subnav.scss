@@ -1,0 +1,51 @@
+.subNav,
+.page-title {
+	position: fixed;
+	top: $navHeight;
+	width: 100%;
+	z-index: map-get($zIndex, nav);
+	
+	@include height($subNavHeight);
+}
+
+.subNav {
+	background-color: rgba($colorPrimary, .98);
+	color: $textColorPrimaryInverse;
+	fill: $textColorPrimaryInverse;
+	
+	.menu {
+		@extend .container;
+		
+		text-align: center;
+		height: 100%;
+		padding: 0;
+		
+		.menu-item {
+		}
+		
+		.content-menu-item {
+			position: relative;
+		}
+		
+		.current-menu-item:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			margin-left: -$gridUnit*2;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 $gridUnit*2 $gridUnit*2;
+			border-color: transparent transparent $windowBackground transparent;
+		}
+	}
+}
+
+.page-title {
+	background-color: $windowBackground;
+	top: $navHeight + $subNavHeight;
+	text-align: center;
+	font-size: 1em;
+	padding: 0;
+}

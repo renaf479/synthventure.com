@@ -1,0 +1,83 @@
+.menu-item {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	
+	a {
+		@extend .transition;
+		
+		position: relative;
+		height: 100%;
+		margin: 0 $gridUnit*2;
+		
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		border-color: rgba($textColorPrimaryInverse, 0);
+				
+		&:hover {
+			border-color: rgba($textColorPrimaryInverse, 1);
+		}
+		
+	}
+	
+	&.facebook {
+		a {
+			@extend .icon-facebook;
+		}
+	}
+		
+	&.twitter {
+		a {
+			@extend .icon-twitter;
+		}
+	}
+	
+	&.instagram {
+		a {
+			@extend .icon-instagram;
+		}
+	}
+}
+
+.sv-menu {
+	color: $textColorPrimaryInverse;
+	
+	a {
+			
+	}
+	
+	.container {
+		height: inherit;
+	}
+	
+	.home {
+		@extend .transition;
+		
+		position: relative;
+		background-color: $colorPrimary;
+		width: $navHeightInitial;
+		height: inherit;
+		margin-right: $gridUnit;
+		float: left;
+	}
+	
+	.synth-logo {
+		@extend .transition;
+	
+		position: absolute;
+		top: 50%;
+		left: $gridUnit;
+		height: $navHeightInitial*.8;
+		fill: $textColorPrimaryInverse;
+		transform: translate(0, -50%);
+		
+
+		g.s > path {
+			display: block;
+		}
+		
+		path {
+			display: none;
+		}
+	}	
+}

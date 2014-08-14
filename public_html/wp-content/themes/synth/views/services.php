@@ -19,7 +19,7 @@
 		<h1 class="page-title"><?php the_title(); ?></h1>
 		
 		<div class="services synth-internal-page">
-			<div class="cover">
+			<div class="cover" data-bg-src="<?php //echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>">
 				<?php the_post_thumbnail('full', array('class'=>'synth-img-cover'));?>
 			</div>
 			<div class="content">

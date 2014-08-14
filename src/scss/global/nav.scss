@@ -1,87 +1,20 @@
 #nav {
-	@extend .transition;
-	
-	transition-duration: .35s;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: map-get($zIndex, nav);
-	color: $textColorPrimaryInverse;
-	text-decoration: none;
-	font-size: 1.2em;
-	font-family: 'Lato';
-	letter-spacing: 2px;
 	overflow: hidden;
-
+	letter-spacing: 2px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	font-size: 1.2em;
+	z-index: map-get($zIndex, nav);
+	
 	@include height($navHeightInitial);
 	
-	.container {
-		width: $navWidth;
-		height: 100%;
-	}
-	
-	.home {
-		@extend .transition;
-		
-		background-color: $colorPrimary;
-		width: $navHeightInitial;
-		height: 100%;
-		margin-right: $gridUnit;
+	li {
 		float: left;
-		overflow: hidden;
-		position: relative;
-		
-		.synth-logo {
-			@extend .transition;
-		
-			position: absolute;
-			height: $navHeightInitial*.8;
-			fill: $textColorPrimaryInverse;
-			top: 50%;
-			transform: translate(0, -50%);
-			/* top: 4px; */
-			left: 8px;
-			
-			g.s > path {
-				display: block;
-			}
-			
-			path {
-				display: none;
-			}
-		}	
-	}
-	
-	.menu {
-		float: left;
-		height: 100%;
-		margin: 0 auto;
-		padding: 0;
-		list-style: none;
-		
-		li {
-			float: left;
-			position: relative;
-			
-			a {
-				@extend .transition;
-				
-				margin: 0 $gridUnit*2;
-				border-width: 0 0 1px 0;
-				border-style: solid;
-				border-color: rgba($textColorPrimaryInverse, 0);
-				
-				&:hover {
-					border-color: rgba($textColorPrimaryInverse, 1);
-				}
-			}
-		}
 	}
 	
 	&.ui-scrollfix {
 		background-color: rgba($windowBackground, .98);
-		border-bottom: 1px solid $windowBorder;
-		
 		@include height($navHeight);
 		@include shadow();
 		
@@ -89,17 +22,11 @@
 			transition-duration: .55s;
 			background-color: transparent;
 			width: 150px;
-			height: 100%;
 			margin-right: 0;
-			float: left;
 			overflow: hidden;
-			position: relative;
 			
 			.synth-logo {
-				position: absolute;
-				height: 33px;
 				fill: $colorPrimary;
-/* 				top: 11px; */
 				left: 15px;
 				
 				path {
@@ -118,10 +45,9 @@
 					color: $textColorPrimary;
 					margin: 0;
 					padding: 0 $gridUnit*2;
-					width: 100%;
+					border: 0 none;
 					height: 100%;
 					display: block;
-					border: 0 none;
 					
 					&:hover {
 						background-color: rgba($textColorPrimary, .05);
@@ -131,13 +57,34 @@
 				&:last-of-type {
 					border-width: 0 1px 0;
 				}
+				
+				&.current-menu-item,
+				&.current-page-ancestor {
+					border-bottom: 5px solid $colorPrimary;
+					height: $navHeight;
+					a {
+						background-color: rgba($textColorPrimary, .05);
+					}
+				}
 			}
 		}
 	}
+}
+
+#menu-nav {
+	float: left;
+}
+
+#menu-social {
+	float: right;
+	letter-spacing: normal;
+	font-size: 0px;
 	
-	#menu-social {
-		float: right;
-		letter-spacing: normal;
-		font-size: 0px;
+	li a {
+		border: 0 none;
+	}
+	
+	a:before {
+		@extend .icon;
 	}
 }

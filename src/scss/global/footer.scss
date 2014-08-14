@@ -14,36 +14,58 @@
 		height: inherit;		
 	}
 	
+	.footer-nav {
+		@extend .inline;
+		
+		width: $gridUnit*18;
+		
+		.title {
+			text-align: left;	
+		}
+		
+		.menu {
+		}
+	}
+	
+	
+	
+	
+	
+/*
 	.social {
-		padding-bottom: $gridUnit;
+		font-size: 0;
+		
 		&:after {
 			@include pseudoClear();
 		}
 	}
+*/
+	
+	.synth-logo,
+	.social {
+		@extend .inline;
+	}
+	
+	.synth-logo {
+		padding: 0 $gridUnit;
+		height: 1.2em;
+		fill: $colorPrimary;
+	}
+	
+	.social {
+		font-size: 0;
+		width: $gridUnit * 10;
+	}
+/*
 	
 	.menu-social-container {
-		
-		.title {
-			font-size: 1.2em;
-			text-align: left;
-		}
-		
-/*
-		.synth-logo {
-			padding: 0 $gridUnit;
-			height: 1.2em;
-			fill: $colorPrimary;
-		}
-*/
 		
 		.menu {
 			padding: 0;
 			margin: 0;
 						
 			.menu-item {
-				display: block;
 				padding: $gridUnit/2 0;
-				font-size: .9em;
 				
 				a:before {
 					font-size: 16px;
@@ -52,6 +74,7 @@
 			}
 		}
 	}
+*/
 	
 	.copyright {
 		font-size: .8em;

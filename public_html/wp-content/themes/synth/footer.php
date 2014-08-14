@@ -14,7 +14,11 @@
 		<footer id="footer">
 			<div class="container">
 				<?php wp_footer(); ?>
-				<?php //dynamic_sidebar('footer'); ?>
+				
+				<?php dynamic_sidebar('footer'); ?>
+				
+				<synth-logo></synth-logo>
+				
 				
 				<div class="social">
 					<?php

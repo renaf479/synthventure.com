@@ -1,10 +1,8 @@
 $gridUnit: 8px;
 
-$containerWidth: 1000px;
 
-$navHeightInitial: $gridUnit * 5;
-$navHeight: $gridUnit * 7;
-$navWidth: $gridUnit * 150;
+
+
 
 
 $colorPrimary: #fa8b08;
@@ -28,4 +26,13 @@ $windowBorder: rgba($windowBlack, .12);
 * Layout
 */
 
-$footerHeight: $gridUnit * 17;
+$containerWidth: 1056px;
+
+$navHeightInitial: 40px;
+$navHeight: 56px;
+
+
+$footerHeight: 136px;
+
+$subNavHeight: $navHeight + $gridUnit*2;
+$navWidth: $gridUnit * 150;
