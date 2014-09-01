@@ -23,7 +23,6 @@ while($work->have_posts()): $work->the_post();
 		<?php while($works->have_posts()): $works->the_post();?>
 		<a href="<?php the_permalink();?>" class="work <?php echo $workClass[$works->current_post].' '.$workHoverClass[array_rand($workHoverClass, 1)];?>" data-in-view="inView($inview, $element, false)">
 			<div class="wrapper">
-				
 				<div class="content">
 					<h3 class="title"><?php the_title();?></h3>
 					<span class="excerpt"><?php the_field('excerpt');?></span>
