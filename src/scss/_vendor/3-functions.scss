@@ -6,6 +6,19 @@ $zIndex: (
 	bottom: 0
 );
 
+
+
+
+//Shortcut function to colorSchemeObj
+@function color($key) {
+	@if map-has-key($colorObj, $key) {
+		@return map-get($colorObj, $key);
+	}
+	
+	@warn "Unknown `#{$key}` in $colorObj.";
+	@return null;
+}
+
 @mixin height($height) {
 	height: $height;
 	line-height: $height;
@@ -38,6 +51,18 @@ $zIndex: (
 		box-shadow: 0 2px 5px rgba(#000, 0.26);
 	} @else if $direction == 'left' {
 		box-shadow: -2px 0 5px rgba(#000, 0.26);
+	}
+}
+
+@mixin underline($color) {
+	@extend .transition;
+
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: rgba($color, 0);
+	
+	&:hover {
+		border-color: rgba($color, 1);
 	}
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> data-ng-app="synthApp">
     <head>
-    	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+    	<meta charset="<?php bloginfo('charset'); ?>" />
     	<meta name="viewport" content="width=device-width"/>
         <title>
         	<?php
@@ -19,20 +19,22 @@
     	<?php 
     		$navClass = (!is_front_page())? ' ui-scrollfix': '';
     	?>
-    	<nav id="nav" class="sv-menu<?php echo $navClass;?>" data-ui-scrollfix="100">
+    	<nav id="nav" class="<?php echo $navClass;?>" data-ui-scrollfix="100">
     		<div class="container">
-    			<a href="/" class="home">
+    			<a href="/" class="link-home nav-menu no-underline">
     				<synth-logo></synth-logo>
     			</a>
 				<?php 
 					wp_nav_menu(array(
 						'container'=>false,
+						'menu_class'=>'nav-menu',
 						'theme_location' => 'top'
 						)
 					);
 					
 					wp_nav_menu(array(
 						'container'=>false,
+						'menu_class'=>'nav-menu social-links',
 						'theme_location' => 'social'
 						)
 					);

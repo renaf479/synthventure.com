@@ -1,0 +1,73 @@
+//Main Nav
+#nav {
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+	color: color('textWhite');
+	
+	@include height(map-get(map-get($layoutObj, 'nav'), 'height'));
+	
+	.link-home {
+		padding: 4px 8px;
+		background-color: color('primary');
+		fill: color('textWhite');
+		
+		.s > path {
+			opacity: 1;
+		}
+		
+		path {
+			@extend .transition;
+			opacity: 0;
+		}
+	}
+	
+	&.ui-scrollfix {
+		background-color: rgba(color('bg'), .98);
+	
+		.link-home {
+			background-color: transparent;
+			fill: color('primary');
+			width: 150px;
+			
+			path {
+				@extend .transition;
+				transition-delay: .2s;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+.nav-menu {
+	@extend .inline;
+	@extend .transition;
+	
+	transition-duration: .5s;
+}
+
+a:not(.no-underline) {	
+	@extend .transition;
+	@include underline(color('textWhite'));
+}
+
+.menu-item {
+	@extend .inline;
+	
+	padding: 0 16px;
+}
+
+.link-home {
+	height: map-get(map-get($layoutObj, 'nav'), 'height');
+	width: map-get(map-get($layoutObj, 'nav'), 'height');
+	overflow: hidden;
+}
+
+.synth-logo {
+	height: 100%;
+}

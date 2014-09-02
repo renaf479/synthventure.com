@@ -64,6 +64,12 @@ module.exports = function(grunt) {
 			},
 			jsDev: {
 				files: {'public_html/assets/js/main.js': ['build/js/main.js']}
+			},
+			cssDeploy: {
+				files: {'public_html/assets/css/main.min.css': ['build/css/main.min.css']}
+			},
+			jsDeploy: {
+				files: {'public_html/assets/js/main.min.js': ['build/js/main.min.js']}
 			}
 	    },
 		/** Minifies CSS **/

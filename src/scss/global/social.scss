@@ -1,0 +1,57 @@
+//Social Icons
+.social-links {
+	a {
+		height: 100%;	
+	}
+	
+	.facebook {
+		a {
+			@extend .icon-facebook;
+		}
+	}
+}
+
+
+
+/*
+.menu-item {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	
+	a {
+		@extend .transition;
+		
+		position: relative;
+		height: 100%;
+		margin: 0 $gridUnit*2;
+		
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		border-color: rgba($textColorPrimaryInverse, 0);
+				
+		&:hover {
+			border-color: rgba($textColorPrimaryInverse, 1);
+		}
+		
+	}
+	
+	&.facebook {
+		a {
+			@extend .icon-facebook;
+		}
+	}
+		
+	&.twitter {
+		a {
+			@extend .icon-twitter;
+		}
+	}
+	
+	&.instagram {
+		a {
+			@extend .icon-instagram;
+		}
+	}
+}
+*/

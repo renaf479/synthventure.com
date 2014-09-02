@@ -1,3 +1,4 @@
+/*
 .menu-item {
 	position: relative;
 	display: inline-block;
@@ -38,6 +39,7 @@
 		}
 	}
 }
+*/
 
 .sv-menu {
 	color: $textColorPrimaryInverse;

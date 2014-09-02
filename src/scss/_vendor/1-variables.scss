@@ -1,5 +1,23 @@
 $gridUnit: 8px;
 
+$colorObj: (
+	'primary': #fa8b08,
+	'bg': #f9f9f9,
+	'textBlack': #6d727c,
+	'textWhite': #fff
+);
+
+$layoutObj: (
+	'grid': 8px,
+	'width': 1056px,
+	'nav': (
+		'height': 50px
+	)
+);
+
+
+
+
 
 
 
