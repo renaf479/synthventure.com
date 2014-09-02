@@ -1,7 +1,12 @@
 //Social Icons
 .social-links {
 	a {
-		height: 100%;	
+		height: 100%;
+		font-size: 0px;
+		
+		&:before {
+			@extend .icon;
+		}
 	}
 	
 	.facebook {
@@ -9,9 +14,19 @@
 			@extend .icon-facebook;
 		}
 	}
+	
+	.twitter {
+		a {
+			@extend .icon-twitter;
+		}
+	}
+	
+	.instagram {
+		a {
+			@extend .icon-instagram;
+		}
+	}
 }
-
-
 
 /*
 .menu-item {

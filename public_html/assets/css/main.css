@@ -176,7 +176,8 @@ body.home #our-work .work:hover .title,
 
 [class^='icon-'],
 [class*=' icon-'],
-.icon {
+.icon,
+.social-links a:before {
   font-family: 'icomoon';
   font-size: 24px;
   speak: none;
@@ -1655,11 +1656,13 @@ body.home #our-work .work:hover .title,
   content: '\e16b';
 }
 
-.icon-instagram:before {
+.icon-instagram:before,
+.social-links .instagram a:before {
   content: '\e16c';
 }
 
-.icon-twitter:before {
+.icon-twitter:before,
+.social-links .twitter a:before {
   content: '\e16d';
 }
 
@@ -2094,6 +2097,22 @@ body.home #footer #our-work,
   opacity: 0;
 }
 
+#nav .menu-item a:hover {
+  color: #fa8b08;
+  fill: #fa8b08;
+  border-color: #fa8b08;
+}
+
+#nav #menu-social {
+  position: absolute;
+  right: 0;
+  width: 175px;
+}
+
+#nav #menu-social a {
+  border: 0 none;
+}
+
 #nav.ui-scrollfix {
   background-color: rgba(249, 249, 249, 0.98);
 }
@@ -2101,7 +2120,7 @@ body.home #footer #our-work,
 #nav.ui-scrollfix .link-home {
   background-color: transparent;
   fill: #fa8b08;
-  width: 150px;
+  width: 170px;
 }
 
 #nav.ui-scrollfix .link-home path {
@@ -2174,6 +2193,7 @@ a:not(.no-underline):hover {
 
 .social-links a {
   height: 100%;
+  font-size: 0px;
 }
 
 /*
